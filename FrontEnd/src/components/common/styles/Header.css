@@ -18,6 +18,11 @@ li:hover{
     opacity: 0.2;
 }
 
-Button{
+.btn-sign-up{
+    position: absolute;
     transform: translate(1200%, -250%);
+}
+
+.btn-sign-in{
+    transform: translate(1420%, -250%);
 }

@@ -10,12 +10,23 @@ import HireMePage from './pages/HirePage';
 import AuthPage from './pages/AuthPage';
 import ProjectDetailPage from './pages/ProjectDeatilsPage';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function App() {
     const [showSplash, setShowSplash] = React.useState(true);
 
     React.useEffect(() => {
         const timer = setTimeout(() => setShowSplash(false), 3000);
         return () => clearTimeout(timer);
+    }, []);
+
+    React.useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 120,
+        });
     }, []);
 
     if (showSplash) {
@@ -25,7 +36,6 @@ function App() {
     return (
         <Router>
             <Header />
-
             <main>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
@@ -34,7 +44,6 @@ function App() {
                     <Route path="/project/:id" element={<ProjectDetailPage />} />
                 </Routes>
             </main>
-
             <Footer />
         </Router>
     );
