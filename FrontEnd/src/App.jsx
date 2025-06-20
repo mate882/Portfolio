@@ -1,8 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import SplashScreen from './components/common/SplashScreen';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 
+import HomePage from './pages/HomePage';
+import HireMePage from './pages/HirePage';
+import AuthPage from './pages/AuthPage';
+import ProjectDetailPage from './pages/ProjectDeatilsPage';
 
 function App() {
     const [showSplash, setShowSplash] = React.useState(true);
@@ -16,13 +22,22 @@ function App() {
         return <SplashScreen />;
     }
 
-    return(
-        <>
+    return (
+        <Router>
             <Header />
-            <Footer />
-        </>
-    );
 
+            <main>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/hireme" element={<HireMePage />} />
+                    <Route path="/auth" element={<AuthPage />} />
+                    <Route path="/project/:id" element={<ProjectDetailPage />} />
+                </Routes>
+            </main>
+
+            <Footer />
+        </Router>
+    );
 }
 
-export default App
+export default App;

@@ -5,13 +5,17 @@
     transform: translateY(31.9%);
 }
 
-img{
+.discord, .github, .inst, .linkdn, .slack, .telegram,
+.tiktok, .twitter, .whatsapp, .youtube, .fiverr, .upwork,
+.peopleperhour, .toptal, .workana, .truelancer{
     width: 40px;
     cursor: pointer;
     transition: 0.5s ease-in-out;
 }
 
-img:hover{
+.discord:hover, .github:hover, .inst:hover, .linkdn:hover, .slack:hover, .telegram:hover,
+.tiktok:hover, .twitter:hover, .whatsapp:hover, .youtube:hover, .fiverr:hover, .upwork:hover,
+.peopleperhour:hover, .toptal:hover, .workana:hover, .truelancer:hover{
     opacity: 0.5;
 }
 

@@ -1,0 +1,25 @@
+
+.Herosection img{
+    position: relative;
+    width: 50%;
+    left: 5%;
+    border-radius: 20px;
+}
+
+.Herosection h1{
+    position: absolute;
+    transform: translate(200%, -680%); 
+    font-size: 4em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.Herosection p{
+    position: absolute;
+    font-size: 1em;
+    display: flexbox;
+    color: #fdfff6;
+    font-family: 'Courier New', Courier, monospace;
+    left: 58%;
+    right: 5%;
+    bottom: 20%;
+}

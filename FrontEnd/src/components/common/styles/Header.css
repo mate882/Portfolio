@@ -3,9 +3,11 @@ body{
 }
 
 li{
+    position: relative;
     display: inline;
     padding: 20px;
-    margin-left: 40px;
+    margin-left: 20px;
+    left: 10%;
     font-size: xx-large;
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;

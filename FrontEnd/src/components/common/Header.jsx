@@ -1,5 +1,6 @@
 import React from "react";
 import Button from './Button';
+import { Link } from 'react-router-dom';
 import './styles/Header.css'
 
 function Header(){
@@ -8,15 +9,27 @@ function Header(){
             <div>
                 <nav>
                     <ul  style={{ listStyle: 'none' }}>
-                        <li>Home</li>
+                        <li><Link style={{ textDecoration: 'none', color: '#031a09' }} to="/">Home</Link></li>
                         <li>Services</li>
-                        <li>Contact Me</li>
-                        <li>Hire Me</li>
+                        <li>
+                            <a
+                                href="#footer"
+                                style={{ textDecoration: 'none', color: '#031a09', cursor: 'pointer' }}
+                                onClick={(e) => {
+                                e.preventDefault();
+                                const footer = document.getElementById('footer');
+                                if (footer) {
+                                    footer.scrollIntoView({ behavior: 'smooth' });
+                                }
+                                }}
+                            >Contact Me</a>
+                        </li>
+                        <li><Link style={{ textDecoration: 'none', color: '#031a09' }} to="/hireme">Hire Me</Link></li>
                     </ul>
                 </nav>
                 
-                <Button>Sign Up</Button>
-                <Button>Sign In</Button>
+                <Button><Link style={{ textDecoration: 'none', color: '#fdfff6' }} to="/auth">Sign Up</Link></Button>
+                <Button><Link style={{ textDecoration: 'none', color: '#fdfff6' }} to="/auth">Sign In</Link></Button>
             </div>
         </header>
     );
