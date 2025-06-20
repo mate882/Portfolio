@@ -1,0 +1,134 @@
+.container{
+    background-color: #031a09;
+    width: 100%;
+    height: 406px;
+    transform: translateY(31.9%);
+}
+
+img{
+    width: 40px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+img:hover{
+    opacity: 0.5;
+}
+
+.title1{
+    position: relative;
+    color: #FDFFF6;
+    font-family: 'Courier New', Courier, monospace;
+    transform: translate(0%, 850%);
+    margin-left: 1%;
+}
+
+.discord{
+    width: 75px;
+    transform: translate(20%, 170%);
+}
+
+.github{
+    width: 50px;
+    transform: translate(35%, 230%);
+}
+
+.inst{
+    width: 50px;
+    transform: translate(90%, 230%);
+}
+
+.linkdn{
+    width: 45px;
+    transform: translate(20%, 250%);
+}
+
+.slack{
+    width: 45px;
+    transform: translate(30%, 250%);
+}
+
+.telegram{
+    width: 45px;
+    transform: translate(50%, 250%);
+}
+
+.tiktok{
+    width: 90px;
+    transform: translate(40%, 150%);
+}
+
+.twitter{
+    width: 80px;
+    transform: translate(30%, 160%);
+}
+
+.whatsapp{
+    width: 50.5px;
+    transform: translate(65%, 230%);
+}
+
+.youtube{
+    width: 50.5px;
+    transform: translate(55%, 300%);
+}
+
+
+.title2{
+    position: relative;
+    color: #FDFFF6;
+    font-family: 'Courier New', Courier, monospace;
+    transform: translate(0%, 850%);
+    margin-left: 1%;
+}
+
+.fiverr{
+    width: 50px;
+    transform: translate(20%, 240%);
+}
+
+.upwork{
+    width: 60px;
+    transform: translate(-200%, 215%);
+}
+
+.peopleperhour{
+    width: 150px;
+    transform: translate(75%, 450%);
+}
+
+.workana{
+    width: 120px;
+    transform: translate(65%, 165%);
+}
+
+.toptal{
+    width: 90px;
+    transform: translate(110%, 430%);
+}
+
+.truelancer{
+    width: 85px;
+    transform: translate(120%, 270%);
+}
+
+.mywebsite{
+    position: absolute;
+    color: #e2f87b;
+    font-family: 'Courier New', Courier, monospace;
+    transform: translate(0%, 150%);
+    margin-left: 1%;
+}
+
+.email{
+    position: absolute;
+    color: #316c40;
+    font-family: 'Courier New', Courier, monospace;
+    transform: translate(250%, 150%);
+    margin-left: 1%;
+}
+
+.email a{
+    text-decoration: none;
+    color: #316c40;
+}

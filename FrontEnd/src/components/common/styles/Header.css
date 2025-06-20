@@ -1,0 +1,21 @@
+body{
+    background: linear-gradient(to right, #316C40, #294E28);
+}
+
+li{
+    display: inline;
+    padding: 20px;
+    margin-left: 40px;
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+li:hover{
+    opacity: 0.2;
+}
+
+Button{
+    transform: translate(1200%, -250%);
+}
