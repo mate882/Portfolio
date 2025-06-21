@@ -1,0 +1,183 @@
+ 
+.prl1{
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fdfff6;
+    position: absolute;
+    cursor: pointer;
+    transform: translate(5%, 300%);
+}
+
+.ProgrammingLan{
+    transform: translate(0%, 30%);
+}
+
+/* .wrapper:hover .ProgrammingLan {
+  display: block;
+} 
+
+.ProgrammingLan:hover .ProgrammingLan{
+    display: block;
+} */
+
+.RealLan{
+    transform: translate(0%, 50%);
+}
+
+.htmlimg{
+    transform: translate(95%, 120%);
+    width: 3%;
+}
+
+.cssimg{
+    width: 2.2%;
+    transform: translate(300%, 120%);
+}
+
+.jsimg{
+    width: 2.3%;
+    transform: translate(600%, 140%);
+}
+
+.reactimg{
+    width: 2.5%;
+    transform: translate(150%, 200%);
+}
+
+.bootstrapimg{
+    width: 2.7%;
+    transform: translate(230%, 120%);
+}
+
+.tailwindimg{
+    width: 3%;
+    transform: translate(600%, 125%);
+}
+
+.gitimg{
+    width: 2.1%;
+    transform: translate(210%, 230%);
+}
+
+.pythonimg{
+    width: 2.7%;
+    transform: translate(830%, 140%);
+}
+
+.djangoimg{
+    width: 2.1%;
+    transform: translate(1150%, 100%);
+}
+
+.drfimg{
+    width: 10%;
+    transform: translate(390%, 60%);
+}
+
+.mysqlimg{
+    width: 5%;
+    transform: translate(75%, 220%);
+}
+
+.postgresqlimg{
+    width: 3%;
+    transform: translate(375%, 320%);
+}
+
+.sqliteimg{
+    width: 8%;
+    transform: translate(220%, 210%);
+}
+
+.htmlp, .cssp, .jsp, .reactp, .bootstrapp,
+.tailwindp, .pythonp, .djangop, .drfp, .mysqlp,
+.postgresqlp, .sqlitep, .gitp{
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fdfff6;
+    position: absolute;
+}
+
+.sqlp, .prlp, .lbrp, .frmp, .verp{
+    position: absolute;
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+    color: #e2f87b;
+}
+
+.sqlp{
+    transform: translate(0%, 430%);
+}
+
+.sql{
+    transform: translate(0%, 200%);
+}
+
+.versco{
+    transform: translate(0%, 600%);
+}
+
+.frm{
+    transform: translate(0%, 240%);
+}
+
+.libr{
+    transform: translate(0%, 250%);
+}
+
+.prl{
+    transform: translate(0%, 80%);
+}
+
+.htmlp{
+    transform: translate(-115%, 120%);
+}
+
+.cssp{
+    transform: translate(-20%, 120%);
+}
+
+.jsp{
+    transform: translate(35%, 120%);
+}
+
+.reactp{
+    transform: translate(-100%, 115%);
+}
+
+.bootstrapp{
+    transform: translate(-55%, 120%);
+}
+
+.tailwindp{
+    transform: translate(65%, 120%);
+}
+
+.gitp{
+    transform: translate(-110%, 120%);
+}
+
+.pythonp{
+    transform: translate(200%, 120%);
+}
+
+.djangop{
+    transform: translate(210%, 120%);
+}
+
+.drfp{
+    transform: translate(100%, 120%);
+}
+
+.mysqlp{
+    transform: translate(-85%, 300%);
+}
+
+.postgresqlp{
+    transform: translate(15%, 300%);
+}
+
+.sqlitep{
+    transform: translate(180%, 300%);
+}
+

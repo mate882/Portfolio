@@ -20,8 +20,7 @@ import upwork from '../../assets/logos/Freelancing/upwork.svg';
 import workana from '../../assets/logos/Freelancing/Workana.png';
 
 function Footer(){
-
-
+    
     return(
         <footer id="footer">
             <div className="container"> 

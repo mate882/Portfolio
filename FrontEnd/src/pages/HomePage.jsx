@@ -1,13 +1,15 @@
 
 import React from "react";
 import HeroSection from '../components/sections/HomePage/HeroSection'
-import SocialLinks from '../components/sections/HomePage/SocialLinks'
+import ActionButtons from '../components/sections/HomePage/ActionButtons'
+import LanguageSection from '../components/sections/HomePage/LanguageSection'
 
 function HomePage() {
   return (
     <>
       <HeroSection></HeroSection>
-      <SocialLinks></SocialLinks>
+      <ActionButtons></ActionButtons>
+      <LanguageSection></LanguageSection>
     </>
   );
 }
