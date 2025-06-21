@@ -24,75 +24,72 @@ import UnitedKingdom from '../../../assets/images/United Kingdom.webp'
 function LanguageSection(){
     return(
         <div>
-            <div className="wrapper">
-                <p class="prl1">Tech Skills</p>
-                <div className="ProgrammingLan">
-                    <div className="prl">
-                        <p className="prlp">Programming Languages:</p>
-                            <ul style={{listStyle: 'none'}}>
-                                <img className="htmlimg" src={html} alt="" />
-                                <img className="cssimg" src={css} alt="" />
-                                <img className="jsimg" src={javascript} alt="" />
-                                <img className="pythonimg" src={python} alt="" />
-                                <li className="htmlp">HTML</li>
-                                <li className="cssp">CSS</li>
-                                <li className="jsp">JavaScript</li>
-                                <li className="pythonp">Python</li>
-                            </ul>
-                    </div> 
+            <p class="prl1">Tech Skills</p>
+            <div className="ProgrammingLan">
+                <div className="prl">
+                    <p className="prlp">Programming Languages:</p>
+                        <ul style={{listStyle: 'none'}}>
+                            <img className="htmlimg" src={html} alt="" />
+                            <img className="cssimg" src={css} alt="" />
+                            <img className="jsimg" src={javascript} alt="" />
+                            <img className="pythonimg" src={python} alt="" />
+                            <li className="htmlp">HTML</li>
+                            <li className="cssp">CSS</li>
+                            <li className="jsp">JavaScript</li>
+                            <li className="pythonp">Python</li>
+                        </ul>
+                </div> 
 
-                    <div className="libr"> 
-                        <p className="lbrp">Libraries:</p>
-                            <ul style={{listStyle: 'none'}}>
-                                <img className="reactimg" src={react} alt="" />
-                                <li className="reactp">React</li>
-                            </ul>
-                    </div>
+                <div className="libr"> 
+                    <p className="lbrp">Libraries:</p>
+                        <ul style={{listStyle: 'none'}}>
+                            <img className="reactimg" src={react} alt="" />
+                            <li className="reactp">React</li>
+                        </ul>
+                </div>
 
-                    <div className="frm">
-                        <p className="frmp">FrameWorks:</p>
-                            <ul style={{listStyle: 'none'}}>
-                                <img className="bootstrapimg" src={Bootstrap} alt="" />
-                                <img className="tailwindimg" src={tailwind} alt="" />
-                                <img className="djangoimg" src={django} alt="" />
-                                <img className="drfimg" src={djangorestframework} alt="" />
-                                <li className="bootstrapp">Bootstrap 5</li>
-                                <li className="tailwindp">Tailwind</li>
-                                <li className="djangop">Django</li>
-                                <li className="drfp">Django Rest Framework(DRF)</li>
-                            </ul>
-                    </div>
+                <div className="frm">
+                    <p className="frmp">FrameWorks:</p>
+                        <ul style={{listStyle: 'none'}}>
+                            <img className="bootstrapimg" src={Bootstrap} alt="" />
+                            <img className="tailwindimg" src={tailwind} alt="" />
+                            <img className="djangoimg" src={django} alt="" />
+                            <img className="drfimg" src={djangorestframework} alt="" />
+                            <li className="bootstrapp">Bootstrap 5</li>
+                            <li className="tailwindp">Tailwind</li>
+                            <li className="djangop">Django</li>
+                            <li className="drfp">Django Rest Framework(DRF)</li>
+                        </ul>
+                </div>
 
-                    <div className="versco">                    
-                        <p className="verp">Version Control:</p>
-                            <ul style={{listStyle: 'none'}}>  
-                                <img className="gitimg" src={git} alt="" />                          
-                                <li className="gitp">Git</li>
-                            </ul>
-                    </div>
+                <div className="versco">                    
+                    <p className="verp">Version Control:</p>
+                        <ul style={{listStyle: 'none'}}>  
+                            <img className="gitimg" src={git} alt="" />                          
+                            <li className="gitp">Git</li>
+                        </ul>
+                </div>
 
-                    <div className="sql">
-                        <p className="sqlp">SQL Databases:</p>
-                            <ul style={{listStyle: 'none'}}>
-                                <img className="mysqlimg" src={mysql} alt="" />
-                                <img className="postgresqlimg" src={Postgresql} alt="" />
-                                <img className="sqliteimg" src={SQLite} alt="" />
-                                <li className="mysqlp">MySQL</li>
-                                <li className="postgresqlp">PostgreSQL</li>
-                                <li className="sqlitep">SQLite</li>
-                            </ul>
-                    </div>
-
-                    
+                <div className="sql">
+                    <p className="sqlp">SQL Databases:</p>
+                        <ul style={{listStyle: 'none'}}>
+                            <img className="mysqlimg" src={mysql} alt="" />
+                            <img className="postgresqlimg" src={Postgresql} alt="" />
+                            <img className="sqliteimg" src={SQLite} alt="" />
+                            <li className="mysqlp">MySQL</li>
+                            <li className="postgresqlp">PostgreSQL</li>
+                            <li className="sqlitep">SQLite</li>
+                        </ul>
                 </div>
             </div>
             <div className="RealLan">
-                <p>Georgian(C1)</p>
-                <p>English(B2)</p>
-                <p>Russian(C1-C2)</p>
-                <img src={Georgia} alt="" />
-                <img src={UnitedKingdom} alt="" />
-                <img src={Russia} alt="" />
+                <p className="genlan">Languages: </p>
+                <p className="geo">Georgian(C1)</p>
+                <p className="eng">English(B2)</p>
+                <p className="rus">Russian(C1-C2)</p>
+                <img className="geoimg" src={Georgia} alt="" />
+                <img className="engimg" src={UnitedKingdom} alt="" />
+                <img className="rusimg" src={Russia} alt="" />
             </div>
         </div>
     );

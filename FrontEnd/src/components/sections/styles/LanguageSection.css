@@ -9,84 +9,74 @@
 }
 
 .ProgrammingLan{
-    transform: translate(0%, 30%);
-}
-
-/* .wrapper:hover .ProgrammingLan {
-  display: block;
-} 
-
-.ProgrammingLan:hover .ProgrammingLan{
-    display: block;
-} */
-
-.RealLan{
-    transform: translate(0%, 50%);
+    position: absolute;
+    margin-left: 5%;
+    margin-top: 7%;
 }
 
 .htmlimg{
-    transform: translate(95%, 120%);
+    transform: translate(85%, 140%);
     width: 3%;
 }
 
 .cssimg{
     width: 2.2%;
-    transform: translate(300%, 120%);
+    transform: translate(305%, 140%);
 }
 
 .jsimg{
     width: 2.3%;
-    transform: translate(600%, 140%);
+    transform: translate(600%, 170%);
 }
 
 .reactimg{
     width: 2.5%;
-    transform: translate(150%, 200%);
+    transform: translate(140%, 220%);
 }
 
 .bootstrapimg{
     width: 2.7%;
-    transform: translate(230%, 120%);
+    transform: translate(220%, 140%);
 }
 
 .tailwindimg{
     width: 3%;
-    transform: translate(600%, 125%);
+    transform: translate(600%, 145%);
 }
 
 .gitimg{
     width: 2.1%;
-    transform: translate(210%, 230%);
+    transform: translate(200%, 250%);
 }
 
 .pythonimg{
     width: 2.7%;
-    transform: translate(830%, 140%);
+    transform: translate(880%, 160%);
 }
 
 .djangoimg{
     width: 2.1%;
-    transform: translate(1150%, 100%);
+    transform: translate(1260%, 120%);
 }
 
 .drfimg{
     width: 10%;
-    transform: translate(390%, 60%);
+    transform: translate(400%, 70%);
 }
 
 .mysqlimg{
     width: 5%;
-    transform: translate(75%, 220%);
+    transform: translate(75%, 240%);
 }
 
 .postgresqlimg{
     width: 3%;
-    transform: translate(375%, 320%);
+    transform: translate(375%, 350%);
 }
 
 .sqliteimg{
     width: 8%;
-    transform: translate(220%, 210%);
+    transform: translate(230%, 230%);
 }
 
 .htmlp, .cssp, .jsp, .reactp, .bootstrapp,
@@ -181,3 +171,56 @@
     transform: translate(180%, 300%);
 }
 
+.RealLan{
+    transform: translate(0%, 2950%);
+}
+
+.genlan{
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fdfff6;
+    position: absolute;
+    transform: translate(5%, -400%);
+}
+
+.geo{
+    font-size: 1em;
+    transform: translate(35%, -250%);
+    font-family: 'Courier New', Courier, monospace;
+    color: #fdfff6;
+    position: absolute;
+}
+
+.eng{
+    font-size: 1em;
+    transform: translate(40%, -50%);
+    font-family: 'Courier New', Courier, monospace;
+    color: #fdfff6;
+    position: absolute;
+}
+
+.rus{
+    font-size: 1em;
+    transform: translate(31%, 150%);
+    font-family: 'Courier New', Courier, monospace;
+    color: #fdfff6;
+    position: absolute;
+}
+
+.geoimg{
+    width: 3%;
+    transform: translate(370% , -120%);
+    border-radius: 5px;
+}
+
+.engimg{
+    width: 3%;
+    transform: translate(250% , -10%);
+    border-radius: 5px;
+}
+
+.rusimg{
+    width: 3%;
+    transform: translate(220% , 130%);
+    border-radius: 5px;
+}
