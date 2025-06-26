@@ -13,7 +13,7 @@ import python from '../../../assets/images/python.png'
 import django from '../../../assets/images/django.svg'
 import djangorestframework from '../../../assets/images/django rest framework.png'
 import mysql from '../../../assets/images/mysql.webp'
-import Postgresql from '../../../assets/images/Postgresql.png'
+import Postgresql from '../../../assets/images/postgres.png'
 import SQLite from '../../../assets/images/SQLite.svg'
 
 import Georgia from '../../../assets/images/Georgia.png'
@@ -24,7 +24,7 @@ import UnitedKingdom from '../../../assets/images/United Kingdom.webp'
 function LanguageSection(){
     return(
         <div>
-            <p class="prl1">Tech Skills</p>
+            <p className="prl1">Tech Skills</p>
             <div className="ProgrammingLan">
                 <div className="prl">
                     <p className="prlp">Programming Languages:</p>

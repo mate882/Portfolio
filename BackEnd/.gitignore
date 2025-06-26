@@ -1,7 +1,65 @@
-/.venv
+# Python cache and compiled files
 __pycache__/
+*.py[cod]
+*.pyo
+*.pyd
 *.pyc
+
+# Virtual environment
+.venv/
+
+# Django specific
+*.log
+*.pot
+*.pyc
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# If using PostgreSQL and have local dump files
+*.dump
+
+# If using environment variables or secrets
 .env
-/media/
-.static/
+.env.*
+
+# VSCode and IDE config files
+.vscode/
+.idea/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Migrations - optional, sometimes you may want to ignore
+# Comment this out if you want to track migrations
+*/migrations/
+!*/migrations/__init__.py
+
+# Docker
+*.pid
+*.seed
+*.bak
+*.swp
+docker-compose.override.yml
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
 .pytest_cache/
+test-results/
+
+# Pipenv
+Pipfile.lock
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Others
+instance/
+.scrapy/

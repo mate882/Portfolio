@@ -1,0 +1,30 @@
+
+section{
+    position: absolute;
+    display: inline-flex;
+    font-size: 2em;
+    color: #fdfff6;
+    transform: translate(20%, 3000%);
+    cursor: pointer;
+}
+
+section.frontend{
+    transform: translate(20%, 3000%);
+}
+
+section.backend{
+    transform: translate(140%, 3000%);
+}
+
+section.fullstack{
+    transform: translate(240%, 3000%);
+}
+
+section.webdesign{
+    transform: translate(330%, 3000%);
+}
+
+section.active{
+    color: #e2f87b;
+    text-decoration: underline;
+}

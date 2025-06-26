@@ -1,0 +1,16 @@
+
+.frontend p, .backend p, .fullstack p{
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
+    font-size: 4em;
+    position: absolute;
+    transform: translate(30%, 1550%);
+}
+
+.error{
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
+    font-size: 4em;
+    position: absolute;
+    transform: translate(80%, 550%);
+}

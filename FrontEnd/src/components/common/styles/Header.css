@@ -28,3 +28,15 @@ li:hover{
 .btn-sign-in{
     transform: translate(1420%, -250%);
 }
+
+#services{
+    scroll-margin-top: -80vh;
+}
+
+#footer{
+    scroll-margin-top: -200vh;
+}
+
+.btn-hire-me1{
+   transform: translate(1300%, -250%);
+}
