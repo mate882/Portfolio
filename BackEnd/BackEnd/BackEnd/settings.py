@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'accounts',
+    'contact',
     'corsheaders',
 ]
 
@@ -179,3 +180,9 @@ CORS_ALLOWED_ORIGINS = [
 
 EMAIL_FIELD = 'email'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mateasanidze808@gmail.com'
+EMAIL_HOST_PASSWORD = 'dvcc gfon tgrq lomh'
