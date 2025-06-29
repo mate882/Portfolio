@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './styles/HireMe.css'
 import { useNavigate } from 'react-router-dom';
 
 const priceRanges = {
@@ -17,6 +18,8 @@ function ContactForm() {
     max_price: priceRanges['Frontend'].max,
     message: ''
   });
+
+  const [isSent, setIsSent] = React.useState(false);
 
   const navigate = useNavigate();
 
@@ -37,21 +40,41 @@ function ContactForm() {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    try {
-      await axios.post('http://localhost:8000/contact/send-request/', form, {
-        headers: { 'Content-Type': 'application/json' }
-      });
-      alert('Your project request was sent successfully!');
-      navigate('/');
-    } catch (error) {
-      alert('Failed to send request. Please try again.');
-    }
-  };
+    setIsSent(true);
+
+     setTimeout(() => {
+        navigate('/');
+      }, 7000);
+
+      try {
+        await axios.post('http://localhost:8000/contact/send-request/', form, {
+          headers: { 'Content-Type': 'application/json' }
+        });
+      } catch (error) {
+        alert('Failed to send request. Please try again.');
+      }
+    };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Email:</label>
+    <>
+     {isSent ? (
+      <div className="loop-wrapper">
+        <p className='sending'>Is Sending...</p>
+        <div className="mountain"></div>
+        <div className="hill"></div>
+        <div className="tree"></div>
+        <div className="tree"></div>
+        <div className="tree"></div>
+        <div className="rock"></div>
+        <div className="truck"></div>
+        <div className="wheels"></div>
+      </div>
+    ) :(
+    <form className="request-form" onSubmit={handleSubmit}>
+      <label htmlFor="email">Email(Where we can continue communication):</label>
       <input
+        id="email"
+        className="input-field"
         type="email"
         name="email"
         value={form.email}
@@ -60,21 +83,43 @@ function ContactForm() {
         required
       />
 
-      <label>Project Type:</label>
-      <select name="project_type" value={form.project_type} onChange={handleChange}>
+      <label htmlFor="project_type">Project Type:</label>
+      <select
+        id="project_type"
+        className="input-field"
+        name="project_type"
+        value={form.project_type}
+        onChange={handleChange}
+      >
         {Object.keys(priceRanges).map(type => (
           <option key={type} value={type}>{type}</option>
         ))}
       </select>
 
-      <label>Minimum Price ($):</label>
-      <input type="number" name="min_price" value={form.min_price} readOnly />
+      <label htmlFor="min_price">Minimum Price ($):</label>
+      <input
+        id="min_price"
+        className="input-field readonly-field"
+        type="number"
+        name="min_price"
+        value={form.min_price}
+        readOnly
+      />
 
-      <label>Maximum Price ($):</label>
-      <input type="number" name="max_price" value={form.max_price} readOnly />
+      <label htmlFor="max_price">Maximum Price ($):</label>
+      <input
+        id="max_price"
+        className="input-field readonly-field"
+        type="number"
+        name="max_price"
+        value={form.max_price}
+        readOnly
+      />
 
-      <label>Project Description:</label>
+      <label htmlFor="message">Project Description:</label>
       <textarea
+        id="message"
+        className="input-field textarea-field"
         name="message"
         value={form.message}
         onChange={handleChange}
@@ -82,8 +127,13 @@ function ContactForm() {
         required
       />
 
-      <button type="submit">Send Request</button>
+      <button type="submit" className="submit-button">Send Request</button>
     </form>
+
+    )}
+
+    </>
+      
   );
 }
 

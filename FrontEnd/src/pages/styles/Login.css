@@ -1,0 +1,183 @@
+
+.signin{
+  margin-left: 39.5%;
+  font-family: 'Courier New', Courier, monospace;
+  color: #031a09;
+  font-size: 3em;
+  margin-top: -2%;
+}
+
+.email2, .password3{
+  position: absolute;
+  width: 200px;
+  border: none;
+  background: linear-gradient(to left, #fdfff6, #e2f87b);
+  opacity: 0.85;
+  padding: 20px 230px 20px 10px;
+  outline: none;
+  border-radius: 20px;
+}
+
+.email2::placeholder, .password3::placeholder{
+  color: #000;
+  font-size: 1.05em;
+  font-family: 'Courier New', Courier, monospace;
+  transform: translate(0%, 5%);
+}
+
+.email2:focus, .password3:focus{
+  box-shadow: 0 0 20px #e2f87b; 
+}
+
+.email2:-webkit-autofill,
+.password3:-webkit-autofill{
+  -webkit-box-shadow: inset 0 0 0 1000px rgba(253, 255, 246, 0.85) !important; /* match #fdfff6 with opacity */
+  box-shadow: inset 0 0 0 1000px #e2f87b !important;
+  -webkit-text-fill-color: #031a09 !important;
+  background: linear-gradient(to left, #fdfff6, #e2f87b);
+  background-clip: padding-box;
+}
+
+
+.email2{
+  margin-left: 31%;
+  margin-top: -2%;
+}
+
+.password3{
+  margin-left: 31%;
+  margin-top: 4%;
+}
+
+.container3 {
+  cursor: pointer;
+  align-items: center;
+  background: #316c40;
+  border-radius: 40px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  position: relative;
+  width: 200px;
+  border: none;
+}
+
+.btn-rg{
+  margin-left: 39.5%;
+  margin-top: 20%;
+}
+
+.text {
+  color: white;
+  position: absolute;
+  transition: opacity 300ms;
+  user-select: none;
+  -moz-user-select: none;
+  font-size: 1.8em;
+}
+
+.fingerprint {
+  left: -8px;
+  opacity: 0;
+  position: absolute;
+  stroke: #777;
+  top: -9px;
+  transition: opacity 1ms;
+}
+
+.fingerprint-active {
+  stroke: #fff;
+}
+
+.fingerprint-out {
+  opacity: 1;
+}
+
+.odd {
+  stroke-dasharray: 0px 50px;
+  stroke-dashoffset: 1px;
+  transition: stroke-dasharray 1ms;
+}
+
+.even {
+  stroke-dasharray: 50px 50px;
+  stroke-dashoffset: -41px;
+  transition: stroke-dashoffset 1ms;
+}
+
+.ok {
+  opacity: 0;
+}
+
+.container3.active {
+  margin-left: 5%;
+  animation: 6s Container;
+}
+
+.container3.active .text {
+  opacity: 0;
+  animation: 6s Text forwards;
+}
+
+.container3.active .fingerprint {
+  opacity: 1;
+  transition: opacity 300ms 200ms;
+}
+
+.container3.active .fingerprint-base .odd {
+  stroke-dasharray: 50px 50px;
+  transition: stroke-dasharray 800ms 100ms;
+}
+
+.container3.active .fingerprint-base .even {
+  stroke-dashoffset: 0px;
+  transition: stroke-dashoffset 800ms;
+}
+
+.container3.active .fingerprint-active .odd {
+  stroke-dasharray: 50px 50px;
+  transition: stroke-dasharray 2000ms 1500ms;
+}
+
+.container3.active .fingerprint-active .even {
+  stroke-dashoffset: 0px;
+  transition: stroke-dashoffset 2000ms 1300ms;
+}
+
+.container3.active .fingerprint-out {
+  opacity: 0;
+  transition: opacity 300ms 4100ms;
+}
+
+.container3.active .ok {
+  opacity: 1;
+  animation: 6s Ok forwards;
+}
+
+@keyframes Container {
+  0% { width: 200px }
+  6% { width: 80px }
+  71% { transform: scale(1); }
+  75% { transform: scale(1.2); }
+  77% { transform: scale(1); }
+
+  94% { width: 80px }
+  100% { width: 200px }
+}
+@keyframes Text {
+  0% { opacity: 1; transform: scale(1); }
+  6% { opacity: 0; transform: scale(0.5); }
+
+  94% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes Ok {
+  0% { opacity: 0 }
+  70% { opacity: 0; transform: scale(0); }
+  75% { opacity: 1; transform: scale(1.1); }
+  77% { opacity: 1; transform: scale(1); }
+  92% { opacity: 1; transform: scale(1); }
+  96% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 0 }
+}

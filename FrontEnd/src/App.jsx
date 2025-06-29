@@ -3,12 +3,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 import SplashScreen from './components/common/SplashScreen';
 import Header from './components/common/Header';
-import Footer from './components/common/Footer';
 
 import HomePage from './pages/HomePage';
 import HireMePage from './pages/HirePage';
 import Register from './pages/Register';
-import Login from './pages/login';
+import Login from './pages/Login';
 import ProjectDetailPage from './pages/ProjectDeatilsPage';
 
 import AOS from 'aos';
@@ -41,6 +40,7 @@ function App() {
   if (showSplash) return <SplashScreen />;
 
   return (
+    <>
     <Router>
       <Header isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
       <main>
@@ -64,8 +64,8 @@ function App() {
           <Route path="/project/:id" element={<ProjectDetailPage />} />
         </Routes>
       </main>
-      <Footer />
     </Router>
+    </>
   );
 }
 

@@ -4,7 +4,7 @@ import "./styles/SplashScreen.css"
 function SplashScreen() {
   return (
     <div className='SplashScreen'>
-      <h1 className='text'>Welcome to My Portfolio!</h1>
+      <h1 className='text1'>Welcome to My Portfolio!</h1>
     </div>
   );
 }
