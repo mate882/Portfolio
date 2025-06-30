@@ -1,9 +1,20 @@
-import React, { useState } from "react";
-import "../styles/Servicessection.css"
-import Projectcard from './ProjectCard'
+import React, { useState, useEffect } from "react";
+import "../styles/Servicessection.css";
+import Projectcard from './ProjectCard';
+import { useLocation } from 'react-router-dom';
+
 
 function Projects() {
     const [activeSection, setActiveSection] = useState("frontend");
+
+    const { hash } = useLocation();
+
+    useEffect(() => {
+        if (hash) {
+            const section = document.querySelector(hash);
+            if (section) section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [hash]);
 
     return (
         <div id="services">

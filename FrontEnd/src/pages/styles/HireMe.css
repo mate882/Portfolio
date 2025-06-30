@@ -13,8 +13,7 @@
   border: none;
   border-radius: 20px;
   font-family: 'Courier New', Courier, monospace;
-  background: linear-gradient(to left, #fdfff6, #e2f87b);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: transparent;
   opacity: 0.95;
 }
 

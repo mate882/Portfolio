@@ -1,0 +1,77 @@
+.project-detail {
+    padding: 20px;
+    max-width: 700px;
+    margin: 5% auto 0;
+    background-color: #fdfff6;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(3, 26, 9, 0.1);
+    color: #031a09;
+    margin-top: -5%;
+    margin-bottom: 2%;
+}
+
+.project-detail img {
+    width: 60%;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 2px solid #294e28;
+}
+
+.project-detail h2 {
+    color: #294e28;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;   
+    font-size: 1.8rem;
+}
+
+.project-detail p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #031a09;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.project-detail .buttons {
+    margin-top: 20px;
+}
+
+.project-detail .buttons a {
+    margin-right: 10px;
+    background-color: #316c40;
+    color: #fdfff6;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn{
+    background-color: #294e28;
+    color: #fdfff6;
+    padding: 12px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    left: 2%;
+    transform: translateY(-100%);
+}
+
+.back-btn:hover {
+    opacity: 0.6;
+}
+
+.project-detail .buttons a:hover {
+    background-color: #294e28;
+}
+
+.category{
+    color: #031a09;
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+}

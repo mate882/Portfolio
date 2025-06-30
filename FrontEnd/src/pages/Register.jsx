@@ -10,7 +10,6 @@ function Register(){
         password2: ''
     });
 
-    const [isActive, setIsActive] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -31,40 +30,54 @@ function Register(){
         setFormData({ ...formData, [e.target.name]: e.target.value});       
     };
 
-    const handleSubmit = async e => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const { email, password1, password2 } = formData;
 
         if (password1.length < 8) {
-            window.alert('Password must be at least 8 characters long.');
-            return;
+        window.alert('Password must be at least 8 characters long.');
+        return;
         }
 
         if (password1 !== password2) {
-            window.alert('Passwords do not match.');
-            return;
+        window.alert('Passwords do not match.');
+        return;
         }
 
-        setTimeout(async () => {
         try {
-            const res = await axios.post("http://localhost:8000/accounts/register/", formData);
-    
-            navigate('/login', { state: { fromRegister: true } });
+        const res = await axios.post('http://localhost:8000/accounts/register/', {
+        email,
+        password1,
+        password2,
+        });
 
-            setFormData({ email: "", password1: "", password2: "" });
-            setIsActive(false);
+        const button = document.querySelector('.container3');
+        button?.classList.add('active');
+
+        await new Promise(resolve => setTimeout(resolve, 5400));
+
+        setFormData({ email: "", password1: "", password2: "" });
+
+        navigate('/login', { state: { fromRegister: true } });
+
+        button?.classList.remove('active');
+
         } catch (err) {
-            alert(
-            err.response?.data?.detail ||
-            JSON.stringify(err.response?.data) ||
-            "Something went wrong."
-            );
-            setIsActive(false);
-            }
-        }, 5200); 
-        };
+        if (err.response && err.response.data) {
+        const errors = err.response.data;
 
+        if (errors.email && errors.email[0].includes('already')) {
+                alert('This email is already registered.');
+        } else {
+                alert('Something went wrong. Please check your input.');
+        }
+        } else {
+        console.error('Unexpected error:', err);
+        alert('Something went wrong. Try again later.');
+        }
+        }
+        };
 
     return (
         <form data-aos="fade-up" data-aos-delay="300" onSubmit={handleSubmit}>
@@ -95,7 +108,7 @@ function Register(){
         />
 
         <div className="btn-rg">
-            <button type="submit" className="container3" onClick={(e) => e.currentTarget.classList.toggle('active')}><p className="text">Sign Up</p>
+            <button type="submit" className="container3" ><p className="text">Sign Up</p>
                 <svg className="fingerprint fingerprint-base" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
                     <g className="fingerprint-out" fill="none" strokeWidth="2" strokeLinecap="round">
                     <path

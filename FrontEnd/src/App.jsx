@@ -61,7 +61,7 @@ function App() {
               )
             }
           />
-          <Route path="/project/:id" element={<ProjectDetailPage />} />
+          <Route path="/projects/:id" element={<ProjectDetailPage />} />
         </Routes>
       </main>
     </Router>

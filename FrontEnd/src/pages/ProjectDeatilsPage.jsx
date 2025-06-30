@@ -1,13 +1,11 @@
 
 import React from "react";
+import ProjectDetail from '../components/sections/ProjectDetail.jsx';
 
-function ProjectDeatils() {
+function ProjectDetailPage() {
   return (
-    <div>
-      <h2>Welcome to the project detail Page</h2>
-      <p>This is where your amazing content will go.</p>
-    </div>
+    <ProjectDetail/>
   );
 }
 
-export default ProjectDeatils
+export default ProjectDetailPage

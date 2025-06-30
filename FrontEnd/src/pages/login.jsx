@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import './styles/Login.css';
@@ -8,33 +8,46 @@ function Login({ setToken }) {
   const navigate = useNavigate(); 
   const location = useLocation();
 
+  const [isAnimating, setIsAnimating] = useState(false);
+
   const fromRegister = location.state?.fromRegister;
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async e => {
-    e.preventDefault();
+   const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    setTimeout(async () => {
-    try {
-      const res = await axios.post('http://localhost:8000/accounts/token/', {
-        email: formData.email,
-        password: formData.password,
-      });
+        if (!formData.email || !formData.password) {
 
-      localStorage.setItem('access_token', res.data.access);
-      localStorage.setItem('refresh_token', res.data.refresh);
+                alert('Please fill in all fields.');
+                return;
+        }
 
-      setToken(res.data.access); 
-      navigate('/');
-    } catch (err) {
-      console.log(err);
-      alert('Invalid credentials');
-    }
-    }, 5300); 
-  };
+        try {
+                const res = await axios.post('http://localhost:8000/accounts/token/', {
+                email: formData.email,
+                password: formData.password,
+        });
+
+                const button = document.querySelector('.container3');
+                button?.classList.add('active');
+
+                await new Promise(resolve => setTimeout(resolve, 5000));
+
+                localStorage.setItem('access_token', res.data.access);
+                localStorage.setItem('refresh_token', res.data.refresh);
+                setToken(res.data.access);
+
+                button?.classList.remove('active');
+
+                navigate('/');
+         } catch (err) {
+                console.log(err);
+                alert('Invalid credentials');
+        }
+        };
 
   return (
     <form data-aos="fade-up" data-aos-delay="300" onSubmit={handleSubmit}>
@@ -60,7 +73,7 @@ function Login({ setToken }) {
       <input className='email2' type="email" name="email" placeholder="Email" onChange={handleChange} required />
       <input className='password3' type="password" name="password" placeholder="Password" onChange={handleChange} required />
       <div className="btn-rg">
-            <button type="submit" className="container3" onClick={(e) => e.currentTarget.classList.toggle('active')}><p className="text">Sign In</p>
+            <button type="submit"className={`container3 ${isAnimating ? 'active' : ''}`}><p className="text">Sign In</p>
                 <svg className="fingerprint fingerprint-base" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
                     <g className="fingerprint-out" fill="none" strokeWidth="2" strokeLinecap="round">
                     <path

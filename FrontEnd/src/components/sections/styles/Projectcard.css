@@ -1,16 +1,309 @@
 
-.frontend p, .backend p, .fullstack p{
-    font-family: 'Courier New', Courier, monospace;
-    color: red;
-    font-size: 4em;
-    position: absolute;
-    transform: translate(30%, 1550%);
+.backend-section {
+    position: relative;
+    transform: translate(0%, 320%);
+    margin-left: 3%;
+    color: #fff;
 }
 
-.error{
-    font-family: 'Courier New', Courier, monospace;
-    color: red;
-    font-size: 4em;
-    position: absolute;
-    transform: translate(80%, 550%);
+.frontend-section {
+    position: relative;
+    transform: translate(0%, 320%);
+    margin-left: 3%;
+    color: #fff;
 }
+
+.fullstack-section {
+    position: relative;
+    transform: translate(0%, 320%);
+    margin-left: 3%;
+    color: #fff;
+}
+
+.prev-btn, .next-btn{
+    position: absolute;
+    background-color: #031a09;
+    color: #fdfff6;
+    font-size: 2em;
+    border: none;
+    padding: 15px 25px 15px 25px;
+    border-radius: 400px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.prev-btn{
+    left: 39%;
+}
+
+.next-btn{
+    left: 47%;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    opacity: 0.5;
+}
+
+.section-padding {
+    padding: 20px 0;
+}
+
+.carousel {
+    width: 90%;
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; 
+}
+
+.carousel > .project-card{
+    scroll-snap-align: center;
+}
+
+.project-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    background-color: #031a09;
+    border-radius: 10px;
+    padding: 10px;
+    scroll-snap-align: start;
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 65%;
+    border-radius: 15px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #fdfff6;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-description {
+    font-size: 0.65em;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #316c40;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-link {
+    font-weight: 600;
+    color: #fdfff6;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+}
+
+.project-link:hover {
+    color: #e2f87b;
+}
+
+.error-section {
+    padding: 40px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: red;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
+
+.errorh {
+	font-family: 'Cabin Sketch', cursive;
+	font-size: 3em;
+	text-align: center;
+	opacity: .8;
+	order: 1;
+}
+
+.errorh small {
+	display: block;
+}
+
+.site {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+    align-items: center;
+	flex-direction: column;
+	margin: 0 auto;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+    transform: translateY(280%);
+}
+
+
+.sketch {
+	position: relative;
+	height: 400px;
+	min-width: 400px;
+	margin: 0;
+	overflow: visible;
+	order: 2;
+	
+}
+
+.bee-sketch {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.red {
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-1.png) no-repeat center center;
+	opacity: 1;
+	animation: red 3s linear infinite, opacityRed 5s linear alternate infinite;
+}
+
+.blue {
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-1.png) no-repeat center center;
+	opacity: 0;
+	animation: blue 3s linear infinite, opacityBlue 5s linear alternate infinite;
+}
+
+
+@media only screen and (min-width: 780px) {
+  .site {
+		flex-direction: row;
+		padding: 1em 3em 1em 0em;
+	}
+	
+	.errorh {
+		text-align: right;
+		order: 2;
+		padding-bottom: 2em;
+		padding-left: 2em;
+
+	}
+	
+	.sketch {
+		order: 1;
+	}
+}
+
+
+@keyframes blue {
+	0% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-1.png) 
+  }
+	9.09% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-2.png) 
+  }
+	27.27% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-3.png) 
+  }
+	36.36% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-4.png) 
+  }
+	45.45% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-5.png) 
+  }
+	54.54% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-6.png) 
+  }
+	63.63% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-7.png) 
+  }
+	72.72% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-8.png) 
+  }
+	81.81% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-9.png) 
+  }
+	100% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/blue-1.png) 
+  }
+}
+
+@keyframes red {
+	0% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-1.png) 
+  }
+	9.09% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-2.png) 
+  }
+	27.27% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-3.png) 
+  }
+	36.36% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-4.png) 
+  }
+	45.45% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-5.png) 
+  }
+	54.54% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-6.png) 
+  }
+	63.63% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-7.png) 
+  }
+	72.72% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-8.png) 
+  }
+	81.81% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-9.png) 
+  }
+	100% {
+		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/198554/red-1.png) 
+  }
+}
+
+@keyframes opacityBlue {
+	from {
+		opacity: 0
+	}
+	25% {
+		opacity: 0
+	}
+	75% {
+		opacity: 1
+	}
+	to {
+		opacity: 1
+	}
+}
+
+@keyframes opacityRed {
+	from {
+		opacity: 1
+	}
+	25% {
+		opacity: 1
+	}
+	75% {
+		opacity: .3
+	}
+	to {
+		opacity: .3
+	}
+}
+
