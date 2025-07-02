@@ -137,3 +137,115 @@
     text-decoration: none;
     color: #316c40;
 }
+
+@media screen and (max-width: 480px) {
+    
+    footer{
+        transform: translateY(20%);
+    }
+
+    .mywebsite{
+        transform: translate(0%, 150%);
+        margin-left: 1%;
+        font-size: 0.5em;
+    }
+
+    .email{
+        transform: translate(0%, 350%);
+        margin-left: 1%;
+        font-size: 0.5em;
+    }
+
+    .title1, .title2{
+        margin-left: 1%;
+        font-size: 1em;
+    }
+
+    .title1{
+        transform: translate(0%, 400%);
+    }
+
+    .title2{
+        transform: translate(0%, 250%);
+    }
+
+    .linkdn{
+        width: 8%;
+        transform: translate(20%, 120%);
+    }
+
+    .github{
+        width: 9.5%;
+        transform: translate(35%, 110%);
+    }
+
+    .discord{
+        width: 15%;
+        transform: translate(15%, 90%);
+    }
+
+    .slack{
+        width: 9%;
+        transform: translate(20%, 115%);
+    }
+
+    .telegram{
+        width: 9%;
+        transform: translate(45%, 115%);
+    }
+
+    .whatsapp{
+        width: 10%;
+        transform: translate(65%, 110%);
+    }
+
+    .inst{
+        width: 10%;
+        transform: translate(90%, 110%);
+    }
+
+    .tiktok{
+        width: 18%;
+        transform: translate(40%, 85%);
+    }
+
+    .youtube{
+        width: 10%;
+        transform: translate(-870%, 320%);
+    }
+
+    .twitter{
+        width: 15%;
+        transform: translate(70%, 70%);
+    }
+
+    .fiverr{
+        width: 10%;
+        transform: translate(15%, 20%);
+    }
+
+    .upwork{
+        width: 13%;
+        transform: translate(-200%, 30%);
+    }
+
+    .peopleperhour{
+        width: 30%;
+        transform: translate(65%, -10%);
+    }
+
+    .workana{
+        width: 25%;
+        transform: translate(35%, 30%);
+    }
+
+    .toptal{
+        width: 20%;
+        transform: translate(-385%, 180%);
+    }
+
+    .truelancer{
+        width: 20%;
+        transform: translate(100%, 20%);
+    }
+}

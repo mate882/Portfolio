@@ -15,7 +15,7 @@ body{
 	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     font-family: "Cedarville Cursive", cursive;
     font-weight: 600;
-    font-size: 4.5em;
+    font-size: 4.2em;
     color: #031A09;
     font-style: normal;
 }
@@ -43,4 +43,16 @@ body{
   100% {
     opacity: 1;
   }
+}
+
+@media  screen and (max-width: 480px) {
+    .SplashScreen {
+        margin: 10%;
+        margin-top: 30%;
+        margin-left: 15%;
+    }
+    .text1 {
+        font-size: 2.5em;
+    }
+  
 }

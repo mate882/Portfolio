@@ -245,4 +245,13 @@
 
 
 
+@media screen and (max-width: 480px) {
+  .request-form{
+    transform: translateY(-5%);
+  }
 
+  .loop-wrapper{
+    width: 80%;
+  }
+  
+}

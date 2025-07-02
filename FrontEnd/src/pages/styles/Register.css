@@ -187,3 +187,100 @@
   96% { opacity: 0; transform: scale(0.5); }
   100% { opacity: 0 }
 }
+
+@media screen and (min-width: 376px) and (max-width: 480px) {
+  .signup {
+    margin-left: 25%;
+    margin-top: 5%;
+  }
+
+  .email1{
+    width: 30%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+
+  .password1{
+    width: 30%;
+    margin-left: 5%;
+    margin-top: 25%;
+  }
+
+  .password2{
+    width: 30%;
+    margin-left: 5%;
+    margin-top: 45%;
+  }
+
+  .container3 {
+    margin-left: -25%;
+    margin-top: 130%;
+  }
+
+}
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+
+  .signup {
+    margin-left: 25%;
+    margin-top: 5%;
+  }
+
+  .email1{
+    width: 25%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+
+  .password1{
+    width: 25%;
+    margin-left: 5%;
+    margin-top: 25%;
+  }
+
+  .password2{
+    width: 25%;
+    margin-left: 5%;
+    margin-top: 45%;
+    font-size: 0.55em;
+  }
+
+  .container3 {
+    margin-left: -25%;
+    margin-top: 130%;
+  }
+  
+}
+
+@media screen and (max-width: 320px) {
+  .signup {
+    margin-left: 20%;
+    margin-top: 5%;
+  }
+
+  .email1{
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 5%;
+  }
+
+  .password1{
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 25%;
+    font-size: 0.8rem;
+  }
+
+  .password2{
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 45%;
+    font-size: 0.4rem;
+  }
+
+  .container3 {
+    margin-left: -35%;
+    margin-top: 130%;
+  }
+  
+}

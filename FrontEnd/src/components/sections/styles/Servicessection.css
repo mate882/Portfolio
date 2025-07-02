@@ -28,3 +28,56 @@ section.active{
     color: #e2f87b;
     text-decoration: underline;
 }
+
+
+@media screen and (min-width: 321px) and (max-width: 480px) {
+    section.frontend,
+    section.backend,
+    section.fullstack,
+    section.webdesign {
+        font-size: 0.65em;
+    }
+
+    section.frontend{
+        transform: translate(10px, 1300px);
+    }
+
+    section.backend{
+        transform: translate(97px, 1300px);
+    }
+
+    section.fullstack{
+        transform: translate(185px, 1300px);
+    }
+
+    section.webdesign{
+        transform: translate(275px, 1300px);
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    section.frontend,
+    section.backend,
+    section.fullstack,
+    section.webdesign {
+        font-size: 0.5em;
+        top: 120px;
+    }
+
+    section.frontend{
+        transform: translate(10px, 1300px);
+    }
+
+    section.backend{
+        transform: translate(83px, 1300px);
+    }
+
+    section.fullstack{
+        transform: translate(154px, 1300px);
+    }
+
+    section.webdesign{
+        transform: translate(230px, 1300px);
+    }
+}

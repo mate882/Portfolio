@@ -18,10 +18,10 @@ function ProjectDetail() {
                 <h4 className='category'>Category: {project.category}</h4>
                 <img src={project.image} alt={project.title} />
                 <p>{project.description}</p>
-            <div className="buttons">
-                <a href={project.github} target="_blank" rel="noreferrer">GitHub</a>
-                {project.live && <a href={project.live} target="_blank" rel="noreferrer">Live Demo</a>}
-            </div>
+                <div className="buttons">
+                    <a href={project.github} target="_blank" rel="noreferrer">GitHub</a>
+                    {project.live && <a href={project.live} target="_blank" rel="noreferrer">Live Demo</a>}
+                </div>
         </div>
         </div>
     );

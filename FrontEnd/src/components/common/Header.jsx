@@ -1,13 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from './Button';
 import { Link } from 'react-router-dom';
 import './styles/Header.css';
 
 function Header({ isAuthenticated, handleLogout }) {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <header data-aos="fade-down">
       <div>
-        <nav>
+        <nav className={`nav-links ${isOpen ? 'open' : ''}`}>
           <ul style={{ listStyle: 'none' }}>
             <li><Link to="/" style={{ textDecoration: 'none', color: '#031a09' }}>Home</Link></li>
             <li>
@@ -50,8 +57,13 @@ function Header({ isAuthenticated, handleLogout }) {
             </Button>
           </>
         ) : (
-          <Button className="btn-hire-me1" onClick={handleLogout}>Logout</Button>
+          <Button className="btn-log-out" onClick={handleLogout}>Logout</Button>
         )}
+      </div>
+        <div className="hamburger" onClick={toggleMenu}>
+          <div className={`line1 ${isOpen ? 'activate' : ''}`} />
+          <div className={`line2 ${isOpen ? 'activate' : ''}`} />
+        <div className={`line3 ${isOpen ? 'activate' : ''}`} />
       </div>
     </header>
   );

@@ -18,3 +18,43 @@
     padding: 20px 40px;
     transform: translate(-100%, -60%);
 }
+
+@media screen and (min-width:376px) and (max-width: 480px)  {
+    .btn-hire-me, .btn-contact-me {
+        position: relative;
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+
+    .btn-contact-me{
+        transform: translate(75%, -260%);
+    }
+
+    .btn-hire-me{
+        transform: translate(215%, -150%);
+    }
+    
+    .freelancelinks p {
+        font-size: 1.2em;
+    }
+    
+}
+
+
+@media screen and (max-width: 375px) {
+    .btn-hire-me, .btn-contact-me {
+        position: relative;
+        font-size: 0.8em;
+        padding: 10px 20px;
+    }
+
+    .btn-contact-me{
+        transform: translate(90%, -260%);
+    }
+
+    .btn-hire-me{
+        transform: translate(235%, -150%);
+    }
+    
+    
+}

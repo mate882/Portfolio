@@ -23,3 +23,33 @@
     right: 5%;
     bottom: -20%;
 }
+
+@media screen and (min-width:376px) and (max-width: 480px) {
+    .Herosection h1 {
+        font-size: 1.4em;
+        transform: translate(160%, -550%);
+    }
+    
+    .Herosection p {
+        font-size: 0.8em;
+        left: 5%;
+        right: 5%;
+        top: 220px;
+    }
+    
+}
+
+@media screen and (max-width: 375px) {
+    .Herosection h1 {
+        font-size: 0.8em;
+        transform: translate(250%, -800%);
+    }
+    
+    .Herosection p {
+        font-size: 0.5em;
+        left: 5%;
+        right: 5%;
+        top: 220px;
+    }
+    
+}

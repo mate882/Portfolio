@@ -89,7 +89,7 @@ function ProjectCard(props) {
             </div>
 
             <h1 className="errorh">404:
-                <small>Section Not Found</small></h1>
+                <small>Section Is Not Available Yet</small></h1>
         </div>
         );
     }

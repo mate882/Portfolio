@@ -17,6 +17,7 @@ const FrontEndProjects = [
         live: 'https://blogapimate882.onrender.com/',
         category: '⚙️Backend',
     }
+    
       
 ]
 

@@ -1,23 +1,10 @@
 
-.backend-section {
+.backend-section, .fullstack-section , .frontend-section {
     position: relative;
     transform: translate(0%, 320%);
     margin-left: 3%;
     color: #fff;
-}
-
-.frontend-section {
-    position: relative;
-    transform: translate(0%, 320%);
-    margin-left: 3%;
-    color: #fff;
-}
-
-.fullstack-section {
-    position: relative;
-    transform: translate(0%, 320%);
-    margin-left: 3%;
-    color: #fff;
+	z-index: 10;
 }
 
 .prev-btn, .next-btn{
@@ -58,6 +45,7 @@
     white-space: nowrap;
     padding-bottom: 10px;
     -webkit-overflow-scrolling: touch;
+	z-index: 20;
 }
 
 .carousel::-webkit-scrollbar {
@@ -194,7 +182,7 @@
 @media only screen and (min-width: 780px) {
   .site {
 		flex-direction: row;
-		padding: 1em 3em 1em 0em;
+		padding: 1em 2em 1em 0em;
 	}
 	
 	.errorh {
@@ -307,3 +295,70 @@
 	}
 }
 
+
+
+@media screen and (min-width: 321px) and (max-width: 480px) {
+	.frontend-section, .backend-section, .fullstack-section {
+		position: relative;
+		transform: none;
+		top: 1350px;
+	}
+
+	.project-title{
+		font-size: 1rem;
+	}
+
+	.project-card {
+		width: 80%;
+	}
+
+	.prev-btn{
+		left: 100px;
+	}
+
+	.site{
+		transform: translateY(1400px);
+	}
+
+	.errorh {
+		font-size: 1.8em;
+	}
+	
+}
+
+@media screen and (max-width: 320px) {
+	.frontend-section, .backend-section, .fullstack-section {
+		position: relative;
+		transform: none;
+		top: 1200px;
+	}
+
+	.project-title{
+		font-size: 0.9rem;
+	}
+
+	.project-description {
+		font-size: 0.5rem;
+	}
+
+	.project-card {
+		width: 80%;
+	}
+
+	.prev-btn{
+		left: 70px;
+	}
+
+	.site{
+		transform: translateY(1200px);
+	}
+
+	.errorh {
+		font-size: 1.5em;
+	}
+
+	.sketch {
+		min-width: 250px;
+	}
+	
+}
