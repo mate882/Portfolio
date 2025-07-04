@@ -460,23 +460,23 @@
     }
 
     .htmlp{
-        font-size: 1em;
+        font-size: 0.8em;
         transform: translate(40px, 430px);
     }
 
     .cssp{
-        font-size: 1em;
-        transform: translate(105px, 430px);
+        font-size: 0.8em;
+        transform: translate(100px, 430px);
     }
 
     .jsp{
-        font-size: 1em;
-        transform: translate(155px, 430px);
+        font-size: 0.8em;
+        transform: translate(150px, 430px);
     }
 
     .pythonp{
-        font-size: 1em;
-        transform: translate(270px, 430px);
+        font-size: 0.8em;
+        transform: translate(250px, 430px);
     }
 
     .htmlimg{
@@ -486,17 +486,17 @@
 
     .cssimg{
         width: 6.7%;
-        transform: translate(59px, 415px);
+        transform: translate(54px, 415px);
     }
 
     .jsimg{
         width: 6.5%;
-        transform: translate(120px, 415px);
+        transform: translate(110px, 415px);
     }
 
     .pythonimg{
         width: 8%;
-        transform: translate(195px, 420px);
+        transform: translate(170px, 420px);
     }
 
     .lbrp{
@@ -505,7 +505,7 @@
     }
 
     .reactp{
-        font-size: 1em;
+        font-size: 0.8em;
         transform: translate(40px, 440px);
     }
 
@@ -520,22 +520,22 @@
     }
 
     .bootstrapp{
-        font-size: 1em;
+        font-size: 0.8em;
         transform: translate(40px, 550px);
     }
 
     .tailwindp{
-        font-size: 1em;
-        transform: translate(171px, 550px);
+        font-size: 0.8em;
+        transform: translate(155px, 550px);
     }
 
     .djangop{
-        font-size: 1em;
-        transform: translate(270px, 550px);
+        font-size: 0.8em;
+        transform: translate(250px, 550px);
     }
 
     .drfp{
-        font-size: 1em;
+        font-size: 0.8em;
         transform: translate(40px, 640px);
     }
 
@@ -549,17 +549,17 @@
 
     .bootstrapimg{
         width: 8%;
-        transform: translate(55px, 520px);
+        transform: translate(55px, 525px);
     }
 
     .tailwindimg{
         width: 9%;
-        transform: translate(155px, 520px);
+        transform: translate(135px, 525px);
     }
 
     .djangoimg{
         width: 7%;
-        transform: translate(215px, 530px);
+        transform: translate(200px, 530px);
     }
 
     .drfimg{
@@ -573,7 +573,7 @@
     }
 
     .gitp{
-        font-size: 1em;
+        font-size: 0.8em;
         transform: translate(40px, 550px);
     }
 
@@ -592,17 +592,17 @@
     }
 
     .mysqlp{
-        font-size: 1em;
+        font-size: 0.8em;
         transform: translate(40px, 680px);
     }
 
     .postgresqlp{
-        font-size: 1em;
+        font-size: 0.8em;
         transform: translate(120px, 680px);
     }
 
     .sqlitep{
-        font-size: 1em;
+        font-size: 0.8em;
         transform: translate(250px, 680px);
     }
 
@@ -663,7 +663,7 @@
 
     .rusimg{
         width: 9%;
-        transform: translate(145px , 60px);
+        transform: translate(155px , 60px);
         border-radius: 5px;
     }
 } 
@@ -887,5 +887,905 @@
         transform: translate(160px , 63px);
         border-radius: 5px;
     }
+    
+}
+
+@media screen and (min-width: 481px) and (max-width: 580px) {
+    .prl1{
+        transform: translate(10px, 250px);
+    }
+
+    .prlp{
+        font-size: 1.3em;
+        transform: translate(20px, 200px);
+    }
+
+    .htmlp{
+        font-size: 1em;
+        transform: translate(100px, 270px);
+    }
+
+    .cssp{
+        font-size: 1em;
+        transform: translate(155px, 270px);
+    }
+
+    .jsp{
+        font-size: 1em;
+        transform: translate(205px, 270px);
+    }
+
+    .pythonp{
+        font-size: 1em;
+        transform: translate(325px, 270px);
+    }
+
+    .htmlimg{
+        width: 8.5%;
+        transform: translate(1px, 245px);
+    }
+
+    .cssimg{
+        width: 6.3%;
+        transform: translate(15px, 246px);
+    }
+
+    .jsimg{
+        width: 6.5%;
+        transform: translate(65px, 245px);
+    }
+
+    .pythonimg{
+        width: 8%;
+        transform: translate(135px, 255px);
+    }
+
+    .lbrp{
+        font-size: 1.3em;
+        transform: translate(20px, 240px);
+    }
+
+    .reactp{
+        font-size: 1em;
+        transform: translate(100px, 310px);
+    }
+
+    .reactimg{
+        width: 8.5%;
+        transform: translate(4px, 290px);
+    }
+
+    .frmp{
+        font-size: 1.3em;
+        transform: translate(20px, 360px);
+    }
+
+    .bootstrapp{
+        font-size: 1em;
+        transform: translate(100px, 450px);
+    }
+
+    .tailwindp{
+        font-size: 1em;
+        transform: translate(240px, 450px);
+    }
+
+    .djangop{
+        font-size: 1em;
+        transform: translate(355px, 450px);
+    }
+
+    .drfp{
+        font-size: 1em;
+        transform: translate(100px, 535px);
+    }
+
+    .frm{
+        transform: translateY(-10px);
+    }
+
+    .libr{
+        transform: translateY(55px);
+    }
+
+    .bootstrapimg{
+        width: 8.5%;
+        transform: translate(30px, 400px);
+    }
+
+    .tailwindimg{
+        width: 9%;
+        transform: translate(120px, 400px);
+    }
+
+    .djangoimg{
+        width: 7%;
+        transform: translate(175px, 405px);
+    }
+
+    .drfimg{
+        width: 30%;
+        transform: translate(-60px, 490px);
+    }
+
+    .verp{
+        font-size: 1.3em;
+        transform: translate(20px, 380px);
+    }
+
+    .gitp{
+        font-size: 1em;
+        transform: translate(100px, 460px);
+    }
+
+    .versco{
+        transform: translateY(110px);
+    }
+
+    .gitimg{
+        width: 7.5%;
+        transform: translate(-2px, 443px);
+    }
+
+    .sqlp{
+        font-size: 1.3em;
+        transform: translate(20px, 500px);
+    }
+
+    .mysqlp{
+        font-size: 1em;
+        transform: translate(100px, 570px);
+    }
+
+    .postgresqlp{
+        font-size: 1em;
+        transform: translate(180px, 570px);
+    }
+
+    .sqlitep{
+        font-size: 1em;
+        transform: translate(310px, 570px);
+    }
+
+    .mysqlimg{
+        width: 15%;
+        transform: translate(-5px, 535px);
+    }
+
+    .postgresqlimg{
+        width: 10%;
+        transform: translate(30px, 520px);
+    }
+
+    .sqliteimg{
+        width: 22%;
+        transform: translate(75px, 535px);
+    }
+
+    .sql{
+        transform: translateY(50px);
+    }
+
+    .RealLan{
+        transform: translateY(1100px);
+    }
+
+    .genlan{
+        font-size: 1.3em;
+        transform: translate(10px, -100px);
+    }
+
+    .geo{
+        font-size: 1.3em;
+        transform: translate(45px, -60px);
+    }
+
+    .eng{
+        font-size: 1.3em;
+        transform: translate(45px, -10px);
+    }
+
+    .rus{
+        font-size: 1.3em;
+        transform: translate(45px, 40px);
+    }
+
+    .geoimg{
+        width: 9%;
+        transform: translate(195px , -46px);
+        border-radius: 5px;
+    }
+
+    .engimg{
+        width: 10%;
+        transform: translate(135px , 2px);
+        border-radius: 5px;
+    }
+
+    .rusimg{
+        width: 9%;
+        transform: translate(120px , 57px);
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 581px) and (max-width:680px) {
+    .ProgrammingLan{
+        transform: translateY(-50px);
+    }
+    
+    .prl1{
+        transform: translate(10px, 200px);
+    }
+
+    .prlp{
+        font-size: 1.3em;
+        transform: translate(20px, 200px);
+    }
+
+    .htmlp{
+        font-size: 1em;
+        transform: translate(100px, 270px);
+    }
+
+    .cssp{
+        font-size: 1em;
+        transform: translate(155px, 270px);
+    }
+
+    .jsp{
+        font-size: 1em;
+        transform: translate(205px, 270px);
+    }
+
+    .pythonp{
+        font-size: 1em;
+        transform: translate(325px, 270px);
+    }
+
+    .htmlimg{
+        width: 7.5%;
+        transform: translate(-15px, 245px);
+    }
+
+    .cssimg{
+        width: 5.7%;
+        transform: translate(-3px, 246px);
+    }
+
+    .jsimg{
+        width: 5.8%;
+        transform: translate(47px, 245px);
+    }
+
+    .pythonimg{
+        width: 7%;
+        transform: translate(113px, 250px);
+    }
+
+    .lbrp{
+        font-size: 1.3em;
+        transform: translate(20px, 240px);
+    }
+
+    .reactp{
+        font-size: 1em;
+        transform: translate(100px, 310px);
+    }
+
+    .reactimg{
+        width: 7.5%;
+        transform: translate(-10px, 290px);
+    }
+
+    .frmp{
+        font-size: 1.3em;
+        transform: translate(20px, 360px);
+    }
+
+    .bootstrapp{
+        font-size: 1em;
+        transform: translate(100px, 450px);
+    }
+
+    .tailwindp{
+        font-size: 1em;
+        transform: translate(230px, 450px);
+    }
+
+    .djangop{
+        font-size: 1em;
+        transform: translate(335px, 450px);
+    }
+
+    .drfp{
+        font-size: 0.82em;
+        transform: translate(415px, 450px);
+    }
+
+    .frm{
+        transform: translateY(-10px);
+    }
+
+    .libr{
+        transform: translateY(55px);
+    }
+
+    .bootstrapimg{
+        width: 8.5%;
+        transform: translate(10px, 390px);
+    }
+
+    .tailwindimg{
+        width: 9%;
+        transform: translate(90px, 390px);
+    }
+
+    .djangoimg{
+        width: 6%;
+        transform: translate(140px, 395px);
+    }
+
+    .drfimg{
+        width: 28%;
+        transform: translate(220px, 395px);
+    }
+
+    .verp{
+        font-size: 1.3em;
+        transform: translate(20px, 380px);
+    }
+
+    .gitp{
+        font-size: 1em;
+        transform: translate(100px, 460px);
+    }
+
+    .versco{
+        transform: translateY(20px);
+    }
+
+    .gitimg{
+        width: 6%;
+        transform: translate(-10px, 440px);
+    }
+
+    .sqlp{
+        font-size: 1.3em;
+        transform: translate(20px, 500px);
+    }
+
+    .mysqlp{
+        font-size: 1em;
+        transform: translate(100px, 570px);
+    }
+
+    .postgresqlp{
+        font-size: 1em;
+        transform: translate(180px, 570px);
+    }
+
+    .sqlitep{
+        font-size: 1em;
+        transform: translate(310px, 570px);
+    }
+
+    .mysqlimg{
+        width: 10%;
+        transform: translate(-15px, 535px);
+    }
+
+    .postgresqlimg{
+        width: 8%;
+        transform: translate(30px, 525px);
+    }
+
+    .sqliteimg{
+        width: 18%;
+        transform: translate(75px, 535px);
+    }
+
+    .sql{
+        transform: translateY(-20px);
+    }
+
+    .RealLan{
+        transform: translateY(1050px);
+    }
+
+    .genlan{
+        font-size: 1.3em;
+        transform: translate(10px, -100px);
+    }
+
+    .geo{
+        font-size: 1.3em;
+        transform: translate(45px, -60px);
+    }
+
+    .eng{
+        font-size: 1.3em;
+        transform: translate(45px, -10px);
+    }
+
+    .rus{
+        font-size: 1.3em;
+        transform: translate(45px, 40px);
+    }
+
+    .geoimg{
+        width: 9%;
+        transform: translate(195px , -46px);
+        border-radius: 5px;
+    }
+
+    .engimg{
+        width: 10%;
+        transform: translate(123px , 2px);
+        border-radius: 5px;
+    }
+
+    .rusimg{
+        width: 9%;
+        transform: translate(95px , 57px);
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 681px) and (max-width: 780px) {
+    .ProgrammingLan{
+        transform: translateY(-100px);
+    }
+    
+    .prl1{
+        transform: translate(10px, 120px);
+    }
+
+    .prlp{
+        font-size: 1.3em;
+        transform: translate(20px, 200px);
+    }
+
+    .htmlp{
+        font-size: 1em;
+        transform: translate(100px, 270px);
+    }
+
+    .cssp{
+        font-size: 1em;
+        transform: translate(155px, 270px);
+    }
+
+    .jsp{
+        font-size: 1em;
+        transform: translate(205px, 270px);
+    }
+
+    .pythonp{
+        font-size: 1em;
+        transform: translate(325px, 270px);
+    }
+
+    .htmlimg{
+        width: 6.5%;
+        transform: translate(-5px, 245px);
+    }
+
+    .cssimg{
+        width: 5%;
+        transform: translate(8px, 246px);
+    }
+
+    .jsimg{
+        width: 5%;
+        transform: translate(57px, 245px);
+    }
+
+    .pythonimg{
+        width: 6.3%;
+        transform: translate(125px, 250px);
+    }
+
+    .lbrp{
+        font-size: 1.3em;
+        transform: translate(20px, 240px);
+    }
+
+    .reactp{
+        font-size: 1em;
+        transform: translate(100px, 310px);
+    }
+
+    .reactimg{
+        width: 6.5%;
+        transform: translate(0px, 290px);
+    }
+
+    .frmp{
+        font-size: 1.3em;
+        transform: translate(20px, 360px);
+    }
+
+    .bootstrapp{
+        font-size: 1em;
+        transform: translate(100px, 450px);
+    }
+
+    .tailwindp{
+        font-size: 1em;
+        transform: translate(230px, 450px);
+    }
+
+    .djangop{
+        font-size: 1em;
+        transform: translate(335px, 450px);
+    }
+
+    .drfp{
+        font-size: 0.82em;
+        transform: translate(415px, 450px);
+    }
+
+    .frm{
+        transform: translateY(-10px);
+    }
+
+    .libr{
+        transform: translateY(55px);
+    }
+
+    .bootstrapimg{
+        width: 7.5%;
+        transform: translate(10px, 390px);
+    }
+
+    .tailwindimg{
+        width: 8%;
+        transform: translate(90px, 390px);
+    }
+
+    .djangoimg{
+        width: 5%;
+        transform: translate(140px, 395px);
+    }
+
+    .drfimg{
+        width: 24%;
+        transform: translate(200px, 395px);
+    }
+
+    .verp{
+        font-size: 1.3em;
+        transform: translate(20px, 380px);
+    }
+
+    .gitp{
+        font-size: 1em;
+        transform: translate(100px, 460px);
+    }
+
+    .versco{
+        transform: translateY(20px);
+    }
+
+    .gitimg{
+        width: 5%;
+        transform: translate(0px, 440px);
+    }
+
+    .sqlp{
+        font-size: 1.3em;
+        transform: translate(20px, 500px);
+    }
+
+    .mysqlp{
+        font-size: 1em;
+        transform: translate(100px, 570px);
+    }
+
+    .postgresqlp{
+        font-size: 1em;
+        transform: translate(180px, 570px);
+    }
+
+    .sqlitep{
+        font-size: 1em;
+        transform: translate(310px, 570px);
+    }
+
+    .mysqlimg{
+        width: 9%;
+        transform: translate(-5px, 535px);
+    }
+
+    .postgresqlimg{
+        width: 7%;
+        transform: translate(40px, 525px);
+    }
+
+    .sqliteimg{
+        width: 16%;
+        transform: translate(95px, 535px);
+    }
+
+    .sql{
+        transform: translateY(-20px);
+    }
+
+    .RealLan{
+        transform: translateY(1050px);
+    }
+
+    .genlan{
+        font-size: 1.3em;
+        transform: translate(10px, -100px);
+    }
+
+    .geo{
+        font-size: 1.3em;
+        transform: translate(45px, -60px);
+    }
+
+    .eng{
+        font-size: 1.3em;
+        transform: translate(45px, -10px);
+    }
+
+    .rus{
+        font-size: 1.3em;
+        transform: translate(45px, 40px);
+    }
+
+    .geoimg{
+        width: 7%;
+        transform: translate(195px , -46px);
+        border-radius: 5px;
+    }
+
+    .engimg{
+        width: 8%;
+        transform: translate(130px , 2px);
+        border-radius: 5px;
+    }
+
+    .rusimg{
+        width: 7%;
+        transform: translate(115px , 57px);
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 781px) and (max-width: 880px) {
+    .ProgrammingLan{
+        transform: translateY(-100px);
+    }
+    
+    .prl1{
+        transform: translate(10px, 120px);
+    }
+
+    .prlp{
+        font-size: 1.3em;
+        transform: translate(20px, 200px);
+    }
+
+    .htmlp{
+        font-size: 1.3em;
+        transform: translate(50px, 270px);
+    }
+
+    .cssp{
+        font-size: 1.3em;
+        transform: translate(120px, 270px);
+    }
+
+    .jsp{
+        font-size: 1.3em;
+        transform: translate(175px, 270px);
+    }
+
+    .pythonp{
+        font-size: 1.3em;
+        transform: translate(325px, 270px);
+    }
+
+    .htmlimg{
+        width: 6.5%;
+        transform: translate(-5px, 240px);
+    }
+
+    .cssimg{
+        width: 5%;
+        transform: translate(18px, 241px);
+    }
+
+    .jsimg{
+        width: 5%;
+        transform: translate(80px, 240px);
+    }
+
+    .pythonimg{
+        width: 6.3%;
+        transform: translate(165px, 250px);
+    }
+
+    .lbrp{
+        font-size: 1.3em;
+        transform: translate(20px, 240px);
+    }
+
+    .reactp{
+        font-size: 1.3em;
+        transform: translate(50px, 310px);
+    }
+
+    .reactimg{
+        width: 6.5%;
+        transform: translate(0px, 290px);
+    }
+
+    .frmp{
+        font-size: 1.3em;
+        transform: translate(20px, 360px);
+    }
+
+    .bootstrapp{
+        font-size: 1.3em;
+        transform: translate(50px, 450px);
+    }
+
+    .tailwindp{
+        font-size: 1.3em;
+        transform: translate(210px, 450px);
+    }
+
+    .djangop{
+        font-size: 1.3em;
+        transform: translate(335px, 450px);
+    }
+
+    .drfp{
+        font-size: 1.3em;
+        transform: translate(435px, 450px);
+    }
+
+    .frm{
+        transform: translateY(-10px);
+    }
+
+    .libr{
+        transform: translateY(55px);
+    }
+
+    .bootstrapimg{
+        width: 7.5%;
+        transform: translate(30px, 390px);
+    }
+
+    .tailwindimg{
+        width: 8%;
+        transform: translate(130px, 390px);
+    }
+
+    .djangoimg{
+        width: 5%;
+        transform: translate(180px, 390px);
+    }
+
+    .drfimg{
+        width: 24%;
+        transform: translate(300px, 390px);
+    }
+
+    .verp{
+        font-size: 1.3em;
+        transform: translate(20px, 380px);
+    }
+
+    .gitp{
+        font-size: 1.3em;
+        transform: translate(50px, 460px);
+    }
+
+    .versco{
+        transform: translateY(20px);
+    }
+
+    .gitimg{
+        width: 5%;
+        transform: translate(-3px, 440px);
+    }
+
+    .sqlp{
+        font-size: 1.3em;
+        transform: translate(20px, 500px);
+    }
+
+    .mysqlp{
+        font-size: 1.3em;
+        transform: translate(50px, 570px);
+    }
+
+    .postgresqlp{
+        font-size: 1.3em;
+        transform: translate(140px, 570px);
+    }
+
+    .sqlitep{
+        font-size: 1.3em;
+        transform: translate(290px, 570px);
+    }
+
+    .mysqlimg{
+        width: 9%;
+        transform: translate(-5px, 530px);
+    }
+
+    .postgresqlimg{
+        width: 6%;
+        transform: translate(50px, 510px);
+    }
+
+    .sqliteimg{
+        width: 16%;
+        transform: translate(100px, 530px);
+    }
+
+    .sql{
+        transform: translateY(-20px);
+    }
+
+    .RealLan{
+        transform: translateY(1050px);
+    }
+
+    .genlan{
+        font-size: 1.3em;
+        transform: translate(10px, -100px);
+    }
+
+    .geo{
+        font-size: 1.3em;
+        transform: translate(45px, -60px);
+    }
+
+    .eng{
+        font-size: 1.3em;
+        transform: translate(45px, -10px);
+    }
+
+    .rus{
+        font-size: 1.3em;
+        transform: translate(45px, 40px);
+    }
+
+    .geoimg{
+        width: 7%;
+        transform: translate(195px , -46px);
+        border-radius: 5px;
+    }
+
+    .engimg{
+        width: 8%;
+        transform: translate(130px , 2px);
+        border-radius: 5px;
+    }
+
+    .rusimg{
+        width: 7%;
+        transform: translate(100px , 57px);
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 880px) and (max-width: 980px)  {
+
+}
+
+@media (min-width: 980px) and (max-width: 1024px)  {
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px){
     
 }

@@ -30,12 +30,12 @@ section.active{
 }
 
 
-@media screen and (min-width: 321px) and (max-width: 480px) {
+@media screen and (min-width: 376px) and (max-width: 480px) {
     section.frontend,
     section.backend,
     section.fullstack,
     section.webdesign {
-        font-size: 0.65em;
+        font-size: 0.6em;
     }
 
     section.frontend{
@@ -54,6 +54,30 @@ section.active{
         transform: translate(275px, 1300px);
     }
 
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+    section.frontend,
+    section.backend,
+    section.fullstack,
+    section.webdesign {
+        font-size: 0.1em;
+    }
+
+    section.frontend{
+        transform: translate(10px, 1300px);
+    }
+
+    section.backend{
+        transform: translate(85px, 1300px);
+    }
+
+    section.fullstack{
+        transform: translate(160px, 1300px);
+    }
+
+    section.webdesign{
+        transform: translate(240px, 1300px);
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -80,4 +104,125 @@ section.active{
     section.webdesign{
         transform: translate(230px, 1300px);
     }
+}
+
+@media screen and (min-width: 481px) and (max-width: 580px) {
+    section.frontend,
+    section.backend,
+    section.fullstack,
+    section.webdesign {
+        font-size: 0.8em;
+        top: 460px;
+        position: absolute;
+    }
+
+    section.frontend{
+        transform: translate(10px, 1300px);
+    }
+
+    section.backend{
+        transform: translate(120px, 1300px);
+    }
+
+    section.fullstack{
+        transform: translate(225px, 1300px);
+    }
+
+    section.webdesign{
+        transform: translate(345px, 1300px);
+    }    
+}
+
+@media screen and (min-width: 581px) and (max-width:680px) {
+    section.frontend,
+    section.backend,
+    section.fullstack,
+    section.webdesign {
+        font-size: 1em;
+        top: 460px;
+        position: absolute;
+    }
+
+    section.frontend{
+        transform: translate(10px, 1300px);
+    }
+
+    section.backend{
+        transform: translate(150px, 1300px);
+    }
+
+    section.fullstack{
+        transform: translate(295px, 1300px);
+    }
+
+    section.webdesign{
+        transform: translate(445px, 1300px);
+    } 
+}
+
+
+@media (min-width: 681px) and (max-width: 780px) {
+    section.frontend,
+    section.backend,
+    section.fullstack,
+    section.webdesign {
+        font-size: 1.2em;
+        top: 520px;
+        position: absolute;
+    }
+
+    section.frontend{
+        transform: translate(10px, 1300px);
+    }
+
+    section.backend{
+        transform: translate(170px, 1300px);
+    }
+
+    section.fullstack{
+        transform: translate(325px, 1300px);
+    }
+
+    section.webdesign{
+        transform: translate(490px, 1300px);
+    } 
+}
+
+@media (min-width: 781px) and (max-width: 880px) {
+    section.frontend,
+    section.backend,
+    section.fullstack,
+    section.webdesign {
+        font-size: 1.4em;
+        top: 550px;
+        position: absolute;
+    }
+
+    section.frontend{
+        transform: translate(10px, 1300px);
+    }
+
+    section.backend{
+        transform: translate(200px, 1300px);
+    }
+
+    section.fullstack{
+        transform: translate(375px, 1300px);
+    }
+
+    section.webdesign{
+        transform: translate(560px, 1300px);
+    } 
+}
+
+@media (min-width: 880px) and (max-width: 980px)  {
+
+}
+
+@media (min-width: 980px) and (max-width: 1024px)  {
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px){
+    
 }

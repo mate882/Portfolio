@@ -255,3 +255,13 @@
   }
   
 }
+
+@media screen and (min-width:481px) and (max-width: 781px) {
+  request-form{
+    transform: translateY(-5%);
+  }
+
+  .loop-wrapper{
+    width: 80%;
+  }
+}

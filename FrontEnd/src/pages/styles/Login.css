@@ -182,9 +182,14 @@
   100% { opacity: 0 }
 }
 
+.rgs{
+  margin-left: 34%;
+  font-size: 1.5em;
+}
+
 @media screen and (min-width: 376px) and (max-width: 480px) {
   .signin {
-    margin-left: 24%;
+    margin-left: 26%;
     margin-top: 5%;
   }
 
@@ -204,6 +209,11 @@
     position: relative;
     margin-top: 30%;
     text-align: left;
+  }
+
+  .rgs{
+    margin-left: 20%;
+    font-size: 1.2em;
   }
   
 }
@@ -216,13 +226,13 @@
   }
 
   .email2{
-    width: 30%;
+    width: 25%;
     margin-left: 3%;
     margin-top: -5%;
   }
 
   .password3{
-    width: 30%;
+    width: 25%;
     margin-left: 3%;
     margin-top: 15%;
   }
@@ -231,6 +241,10 @@
     position: relative;
     margin-top: 30%;
     text-align: left;
+  }
+  .rgs{
+    margin-left: 12%;
+    font-size: 1.1em;
   }
 }
 
@@ -255,7 +269,133 @@
 
   .success-message{
     position: relative;
-    top: 150px;
+    top: 50px;
     text-align: left;
   }
+  .rgs{
+    margin-left: 10%;
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 580px) {
+  .signin {
+    margin-left: 30%;
+    margin-top: -15%;
+  }
+
+  .email2{
+    width: 40%;
+    margin-left: 7%;
+    margin-top: -5%;
+  }
+
+  .password3{
+    width: 40%;
+    margin-left: 7%;
+    font-size: 0.8em;
+    margin-top: 10%;
+  }
+
+  .container3{
+    margin-left: -50px;
+  }
+
+  .success-message{
+    position: relative;
+    top: -10px;
+    text-align: left;
+  }
+  .rgs{
+    margin-left: 15%;
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 581px) and (max-width:680px) {
+  .signin {
+    margin-left: 35%;
+    margin-top: -10%;
+  }
+
+  .email2{
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 5%;
+  }
+
+  .password3{
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 15%;
+  }
+
+
+  .rgs{
+    margin-left: 20%;
+    font-size: 1.5em;
+  }
+}
+
+
+@media (min-width: 681px) and (max-width: 780px) {
+  .signin {
+    margin-left: 35%;
+    margin-top: -10%;
+  }
+
+  .email2{
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 5%;
+  }
+
+  .password3{
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 15%;
+  }
+
+
+  .rgs{
+    margin-left: 20%;
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 880px) {
+  .signin {
+    margin-left: 35%;
+    margin-top: 0%;
+  }
+
+  .email2{
+    width: 45%;
+    margin-left: 12%;
+    margin-top: 5%;
+  }
+
+  .password3{
+    width: 45%;
+    margin-left: 12%;
+    margin-top: 15%;
+  }
+
+
+  .rgs{
+    margin-left: 20%;
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 880px) and (max-width: 980px)  {
+
+}
+
+@media (min-width: 980px) and (max-width: 1024px)  {
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px){
+    
 }

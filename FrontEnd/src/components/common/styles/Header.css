@@ -208,3 +208,118 @@ li:hover{
         transform: translate(300%, -10%);
     }
 }
+
+
+@media screen and (min-width: 481px) and (max-width: 580px) {
+    li {
+        padding: 20px 0;
+        font-size: 0.8em;
+        text-align: center;
+        left: -15%;
+    }
+
+    .btn-sign-in{
+        font-weight: 500;
+        font-size: 0.4em;
+        transform: translate(540%, -300%);
+    }
+
+    .btn-sign-up{
+        font-size: 0.4em;
+        transform: translate(405%, -300%);
+    }
+
+    .btn-log-out{
+        font-size: 0.4em;
+        transform: translate(450%, -300%);
+    }
+
+}
+
+@media screen and (min-width: 581px) and (max-width:680px) {
+    li {
+        padding: 20px 0;
+        font-size: 0.9em;
+        text-align: center;
+        left: -15%;
+    }
+
+    .btn-sign-in{
+        font-weight: 500;
+        font-size: 0.4em;
+        transform: translate(670%, -300%);
+    }
+
+    .btn-sign-up{
+        font-size: 0.4em;
+        transform: translate(525%, -300%);
+    }
+
+    .btn-log-out{
+        font-size: 0.4em;
+        transform: translate(450%, -300%);
+    }
+}
+
+@media (min-width: 681px) and (max-width: 780px) {
+    li {
+        padding: 20px 0;
+        font-size: 1.2em;
+        text-align: center;
+        left: -12%;
+    }
+
+    .btn-sign-in{
+        font-weight: 500;
+        font-size: 1em;
+        transform: translate(600%, -250%);
+    }
+
+    .btn-sign-up{
+        font-size: 1em;
+        transform: translate(450%, -250%);
+    }
+
+    .btn-log-out{
+        font-size: 1em;
+        transform: translate(550%, -250%);
+    }
+}
+
+@media (min-width: 781px) and (max-width: 880px) {
+    li {
+        padding: 20px 0;
+        font-size: 1.6em;
+        text-align: center;
+        left: -5%;
+    }
+
+    .btn-sign-in{
+        font-weight: 500;
+        font-size: 1em;
+        transform: translate(710%, -270%);
+    }
+
+    .btn-sign-up{
+        font-size: 1em;
+        transform: translate(550%, -270%);
+    }
+
+    .btn-log-out{
+        font-size: 1em;
+        transform: translate(600%, -270%);
+    }
+}
+
+@media (min-width: 880px) and (max-width: 980px)  {
+
+}
+
+@media (min-width: 980px) and (max-width: 1024px)  {
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px){
+    
+}
+

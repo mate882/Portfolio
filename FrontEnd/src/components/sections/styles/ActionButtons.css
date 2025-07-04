@@ -22,16 +22,16 @@
 @media screen and (min-width:376px) and (max-width: 480px)  {
     .btn-hire-me, .btn-contact-me {
         position: relative;
-        font-size: 1.2em;
+        font-size: 1em;
         padding: 10px 20px;
     }
 
     .btn-contact-me{
-        transform: translate(75%, -260%);
+        transform: translate(110%, -240%);
     }
 
     .btn-hire-me{
-        transform: translate(215%, -150%);
+        transform: translate(260%, -130%);
     }
     
     .freelancelinks p {
@@ -56,5 +56,82 @@
         transform: translate(235%, -150%);
     }
     
+    
+}
+
+@media screen and (min-width: 481px) and (max-width: 580px) {
+    .btn-hire-me, .btn-contact-me {
+        position: relative;
+        font-size: 1.2em;
+        padding: 15px 30px;
+    }
+
+    .btn-contact-me{
+        transform: translate(40px, -250px);
+    }
+
+    .btn-hire-me{
+        transform: translate(270px, -370%);
+    }
+    
+}
+
+@media screen and (min-width: 581px) and (max-width:680px) {
+    .btn-hire-me, .btn-contact-me {
+        position: relative;
+        font-size: 1.2em;
+        padding: 15px 30px;
+    }
+
+    .btn-contact-me{
+        transform: translate(100px, -250px);
+    }
+
+    .btn-hire-me{
+        transform: translate(330px, -370%);
+    }
+}
+
+@media (min-width: 681px) and (max-width: 780px) {
+    .btn-hire-me, .btn-contact-me {
+        position: relative;
+        font-size: 1.5em;
+        padding: 20px 40px;
+    }
+
+    .btn-contact-me{
+        transform: translate(135px, -300px);
+    }
+
+    .btn-hire-me{
+        transform: translate(400px, -320%);
+    }
+}
+
+@media (min-width: 781px) and (max-width: 880px) {
+    .btn-hire-me, .btn-contact-me {
+        position: relative;
+        font-size: 2em;
+        padding: 20px 40px;
+    }
+
+    .btn-contact-me{
+        transform: translate(150px, -320px);
+    }
+
+    .btn-hire-me{
+        transform: translate(440px, -290%);
+    }
+}
+
+@media (min-width: 880px) and (max-width: 980px)  {
+
+}
+
+@media (min-width: 980px) and (max-width: 1024px)  {
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px){
     
 }

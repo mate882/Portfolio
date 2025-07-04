@@ -56,3 +56,14 @@ body{
     }
   
 }
+
+@media screen and (min-width: 481px) and (max-width: 780px) {
+    .SplashScreen {
+        margin: 10%;
+        margin-top: 30%;
+        margin-left: 15%;
+    }
+    .text1 {
+        font-size: 3em;
+    }
+}

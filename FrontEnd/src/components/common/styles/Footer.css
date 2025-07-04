@@ -249,3 +249,234 @@
         transform: translate(100%, 20%);
     }
 }
+
+@media screen and (min-width: 481px) and (max-width: 580px) {
+
+    footer{
+        transform: translateY(20%);
+    }
+
+    .mywebsite{
+        transform: translate(0%, 0%);
+        margin-left: 1%;
+        font-size: 0.8em;
+    }
+
+    .email{
+        transform: translate(0%, 150%);
+        margin-left: 1%;
+        font-size: 0.8em;
+    }
+
+    .title1, .title2{
+        margin-left: 1%;
+        font-size: 1em;
+    }
+
+    .title1{
+        transform: translate(0%, 450%);
+    }
+
+    .title2{
+        transform: translate(0%, 500%);
+    }
+
+    .linkdn{
+        width: 6%;
+        transform: translate(20%, 70%);
+    }
+
+    .github{
+        width: 7.5%;
+        transform: translate(35%, 70%);
+    }
+
+    .discord{
+        width: 12%;
+        transform: translate(15%, 65%);
+    }
+
+    .slack{
+        width: 7%;
+        transform: translate(20%, 70%);
+    }
+
+    .telegram{
+        width: 8%;
+        transform: translate(45%, 70%);
+    }
+
+    .whatsapp{
+        width: 8%;
+        transform: translate(65%, 70%);
+    }
+
+    .inst{
+        width: 8%;
+        transform: translate(90%, 70%);
+    }
+
+    .tiktok{
+        width: 15%;
+        transform: translate(40%, 62%);
+    }
+
+    .youtube{
+        width: 8%;
+        transform: translate(60%, 80%);
+    }
+
+    .twitter{
+        width: 13%;
+        transform: translate(30%, 65%);
+    }
+
+    .fiverr{
+        width: 8%;
+        transform: translate(15%, 130%);
+    }
+
+    .upwork{
+        width: 11%;
+        transform: translate(-200%, 115%);
+    }
+
+    .peopleperhour{
+        width: 25%;
+        transform: translate(65%, 220%);
+    }
+
+    .workana{
+        width: 17%;
+        transform: translate(45%, 105%);
+    }
+
+    .toptal{
+        width: 15%;
+        transform: translate(65%, 200%);
+    }
+
+    .truelancer{
+        width: 15%;
+        transform: translate(60%, 120%);
+    }
+}
+
+@media screen and (min-width: 580px) and (max-width: 680px){
+    .email{
+        transform: translate(0px, 60px);
+    }
+
+    .title1{
+        transform: translate(0%, 600%);
+    }
+
+    .title2{
+        transform: translate(0%, 500%);
+    }
+
+    .linkdn{
+        width: 6%;
+        transform: translate(20%, 140%);
+    }
+
+    .github{
+        width: 7.5%;
+        transform: translate(35%, 120%);
+    }
+
+    .discord{
+        width: 12%;
+        transform: translate(15%, 95%);
+    }
+
+    .slack{
+        width: 7%;
+        transform: translate(20%, 130%);
+    }
+
+    .telegram{
+        width: 8%;
+        transform: translate(45%, 120%);
+    }
+
+    .whatsapp{
+        width: 8%;
+        transform: translate(65%, 120%);
+    }
+
+    .inst{
+        width: 8%;
+        transform: translate(90%, 120%);
+    }
+
+    .tiktok{
+        width: 15%;
+        transform: translate(40%, 90%);
+    }
+
+    .youtube{
+        width: 8%;
+        transform: translate(60%, 160%);
+    }
+
+    .twitter{
+        width: 13%;
+        transform: translate(30%, 95%);
+    }
+
+    .fiverr{
+        width: 8%;
+        transform: translate(15%, 130%);
+    }
+
+    .upwork{
+        width: 11%;
+        transform: translate(-200%, 115%);
+    }
+
+    .peopleperhour{
+        width: 25%;
+        transform: translate(65%, 220%);
+    }
+
+    .workana{
+        width: 17%;
+        transform: translate(45%, 105%);
+    }
+
+    .toptal{
+        width: 15%;
+        transform: translate(65%, 200%);
+    }
+
+    .truelancer{
+        width: 15%;
+        transform: translate(-520%, 270%);
+    }
+}
+
+
+@media (min-width: 681px) and (max-width: 780px) {
+    .email{
+        transform: translate(0px, 70px);
+    }
+}
+
+@media (min-width: 781px) and (max-width: 880px) {
+    .email{
+        transform: translate(0px, 70px);
+    }
+}
+
+@media (min-width: 880px) and (max-width: 980px)  {
+
+}
+
+@media (min-width: 980px) and (max-width: 1024px)  {
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px){
+    
+}

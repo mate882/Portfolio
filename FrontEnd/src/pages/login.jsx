@@ -62,10 +62,7 @@ function Login({ setToken }) {
                 borderRadius: '4px',
                 fontWeight: 'bold',
                 }}>
-                <p style={{
-                        marginLeft: '34%',
-                        fontSize: '1.5em'
-                }}>Registration successful! Please login.</p>
+                <p className='rgs'>Registration successful! Please login.</p>
                 </div>
         )}
       </div>

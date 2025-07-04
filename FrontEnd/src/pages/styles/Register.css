@@ -56,6 +56,7 @@
 }
 
 .container3 {
+  transform-origin: top center;
   cursor: pointer;
   align-items: center;
   background: #316c40;
@@ -283,4 +284,137 @@
     margin-top: 130%;
   }
   
+}
+
+@media screen and (min-width: 481px) and (max-width: 580px) {
+  .signup {
+    margin-left: 25%;
+    margin-top: -20%;
+  }
+
+  .email1{
+    width: 30%;
+    margin-left: 13%;
+    margin-top: 5%;
+  }
+
+  .password1{
+    width: 30%;
+    margin-left: 13%;
+    margin-top: 20%;
+  }
+
+  .password2{
+    width: 30%;
+    margin-left: 13%;
+    margin-top: 35%;
+  }
+
+  .container3 {
+    margin-left: -30px;
+    margin-top: 50vh;
+  }
+}
+
+@media screen and (min-width: 581px) and (max-width:680px) {
+  .signup {
+    margin-left: 35%;
+    margin-top: -10%;
+  }
+
+  .email1{
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 5%;
+  }
+
+  .password1{
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 15%;
+  }
+
+  .password2{
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 25%;
+  }
+
+  .container3 {
+    margin-left: -30px;
+    margin-top: 50vh;
+  }
+}
+
+
+@media (min-width: 681px) and (max-width: 780px) {
+  .signup {
+    margin-left: 35%;
+    margin-top: -10%;
+  }
+
+  .email1{
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 5%;
+  }
+
+  .password1{
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 15%;
+  }
+
+  .password2{
+    width: 40%;
+    margin-left: 12%;
+    margin-top: 25%;
+  }
+
+  .container3 {
+    margin-left: -30px;
+    margin-top: 50vh;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 880px) {
+  .signup {
+    margin-left: 35%;
+    margin-top: -10%;
+  }
+
+  .email1{
+    width: 45%;
+    margin-left: 12%;
+    margin-top: 5%;
+  }
+
+  .password1{
+    width: 45%;
+    margin-left: 12%;
+    margin-top: 15%;
+  }
+
+  .password2{
+    width: 45%;
+    margin-left: 12%;
+    margin-top: 25%;
+  }
+
+  .container3 {
+    margin-left: -30px;
+    margin-top: 50vh;
+  }
+}
+
+@media (min-width: 880px) and (max-width: 980px)  {
+
+}
+
+@media (min-width: 980px) and (max-width: 1024px)  {
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px){
+    
 }
