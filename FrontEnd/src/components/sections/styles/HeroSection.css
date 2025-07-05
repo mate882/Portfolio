@@ -21,20 +21,20 @@
     font-family: 'Courier New', Courier, monospace;
     left: 58%;
     right: 5%;
-    bottom: -20%;
+    top: 300px;
 }
 
 @media screen and (min-width:376px) and (max-width: 480px) {
     .Herosection h1 {
         font-size: 1.1em;
-        transform: translate(225%, -750%);
+        transform: translate(220%, -700%);
     }
 
     .Herosection p {
         font-size: 0.8em;
         left: 5%;
         right: 5%;
-        top: 220px;
+        top: 210px;
     }
     
 }
@@ -128,13 +128,80 @@
 }
 
 @media (min-width: 880px) and (max-width: 980px)  {
+    .Herosection h1 {
+        font-size: 3em;
+        transform: translate(550px, -425px);
+    }
 
-}
-
-@media (min-width: 980px) and (max-width: 1024px)  {
-
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1366px){
+    .Herosection img {
+        top: -80px;
+    }
     
+    .Herosection p {
+        font-size: 0.8em;
+        left: 57%;
+        right: 5%;
+        top: 175px;
+    }
+}
+
+@media (min-width: 980px) and (max-width: 1080px)  {
+    .Herosection h1 {
+        font-size: 3em;
+        transform: translate(600px, -460px);
+    }
+
+    .Herosection img {
+        top: -80px;
+    }
+    
+    .Herosection p {
+        font-size: 0.8em;
+        left: 57%;
+        right: 5%;
+        top: 175px;
+    }
+}
+
+@media screen and (min-width: 1081px) and (max-width: 1180px){
+    .Herosection h1 {
+        font-size: 3em;
+        transform: translate(650px, -490px);
+    }
+
+    .Herosection img {
+        top: -80px;
+    }
+    
+    .Herosection p {
+        font-size: 0.8em;
+        left: 57%;
+        right: 5%;
+        top: 175px;
+    }
+}
+
+@media screen and (min-width: 1181px) and (max-width: 1280px){
+    .Herosection h1 {
+        font-size: 3em;
+        transform: translate(720px, -530px);
+    }
+
+    .Herosection img {
+        top: -80px;
+    }
+    
+    .Herosection p {
+        font-size: 0.8em;
+        left: 57%;
+        right: 5%;
+        top: 175px;
+    } 
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1370px) {
+    .Herosection h1 {
+        font-size: 3.5em;
+        transform: translate(780px, -480px);
+    }
 }

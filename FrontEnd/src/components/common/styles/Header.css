@@ -26,11 +26,11 @@ li:hover{
 
 .btn-sign-up{
     position: absolute;
-    transform: translate(1200%, -250%);
+    transform: translate(1150%, -250%);
 }
 
 .btn-sign-in{
-    transform: translate(1420%, -250%);
+    transform: translate(1360%, -250%);
 }
 
 #services{
@@ -89,6 +89,7 @@ li:hover{
     transition: all 0.3s ease;
 }
 
+
 @media screen and (min-width:376px) and (max-width: 480px){
     .hamburger {
         display: flex;
@@ -105,6 +106,7 @@ li:hover{
         max-height: 0;
         transition: max-height 0.4s ease-in-out;
         z-index: 10;
+        transform: translateX(-15px)
     }
 
     .nav-links ul {
@@ -137,15 +139,15 @@ li:hover{
     }
 
     .btn-sign-in{
-        transform: translate(285%, -10%);
+        transform: translate(265%, -10%);
     }
 
     .btn-sign-up{
-        transform: translate(360%, -10%);
+        transform: translate(340%, -10%);
     }
 
     .btn-log-out{
-        transform: translate(370%, -10%);
+        transform: translate(300%, -10%);
     }
 }
 
@@ -165,6 +167,7 @@ li:hover{
         max-height: 0;
         transition: max-height 0.4s ease-in-out;
         z-index: 10;
+        transform: translate(-15px);
     }
 
     .nav-links ul {
@@ -197,15 +200,15 @@ li:hover{
     }
 
     .btn-sign-in{
-        transform: translate(185%, -10%);
+        transform: translate(165%, -10%);
     }
 
     .btn-sign-up{
-        transform: translate(270%, -10%);
+        transform: translate(250%, -10%);
     }
 
     .btn-log-out{
-        transform: translate(300%, -10%);
+        transform: translate(220%, -10%);
     }
 }
 
@@ -312,14 +315,98 @@ li:hover{
 }
 
 @media (min-width: 880px) and (max-width: 980px)  {
+    li {
+        padding: 20px 0;
+        font-size: 1.9em;
+        text-align: center;
+        left: -5%;
+    }
 
+    .btn-sign-in{
+        font-weight: 500;
+        font-size: 1em;
+        transform: translate(810%, -270%);
+    }
+
+    .btn-sign-up{
+        font-size: 1em;
+        transform: translate(645%, -270%);
+    }
+
+    .btn-log-out{
+        font-size: 1em;
+        transform: translate(800%, -270%);
+    }
 }
 
-@media (min-width: 980px) and (max-width: 1024px)  {
+@media (min-width: 980px) and (max-width: 1080px)  {
+    li {
+        left: -9%;
+    }
 
+    .btn-sign-in{
+        transform: translate(930%, -270%);
+    }
+
+    .btn-sign-up{
+        transform: translate(755%, -270%);
+    }
+
+    .btn-log-out{
+        transform: translate(900%, -270%);
+    }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1366px){
-    
+@media screen and (min-width: 1081px) and (max-width: 1180px){
+    li {
+        left: -9%;
+    }
+
+    .btn-sign-in{
+        transform: translate(930%, -270%);
+    }
+
+    .btn-sign-up{
+        transform: translate(755%, -270%);
+    }
+
+    .btn-log-out{
+        transform: translate(900%, -270%);
+    } 
 }
 
+@media screen and (min-width:1181px) and (max-width: 1280px){
+    li {
+        left: -9%;
+    }
+
+    .btn-sign-in{
+        transform: translate(930%, -270%);
+    }
+
+    .btn-sign-up{
+        transform: translate(755%, -270%);
+    }
+
+    .btn-log-out{
+        transform: translate(870%, -270%);
+    } 
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1370px) {
+    li {
+        left: -9%;
+    }
+
+    .btn-sign-in{
+        transform: translate(1130%, -270%);
+    }
+
+    .btn-sign-up{
+        transform: translate(930%, -270%);
+    }
+
+    .btn-log-out{
+        transform: translate(980%, -270%);
+    } 
+}

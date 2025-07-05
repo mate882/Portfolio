@@ -19,7 +19,7 @@ function ProjectCard(props) {
 
     if (props.section === "frontend") {
         return (
-        <div className="project-section frontend-section">
+        <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }} className="project-section frontend-section">
             <div className="section-padding">
             <div className="carousel">
                 {FrontEndProjects.map((project) => (
@@ -40,7 +40,7 @@ function ProjectCard(props) {
         );
     } else if (props.section === "backend") {
         return (
-        <div className="project-section backend-section">
+        <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }} className="project-section backend-section">
             <div className="section-padding">
             <div className="carousel">
                 {BackEndProjects.map((project) => (
@@ -61,7 +61,7 @@ function ProjectCard(props) {
         );
     } else if (props.section === "fullstack") {
         return (
-        <div className="project-section fullstack-section">
+        <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }} className="project-section fullstack-section">
             <div className="section-padding">
             <div className="carousel">
                 {FullStackProjects.map((project) => (
@@ -82,7 +82,7 @@ function ProjectCard(props) {
         );
     } else {
         return (
-        <div className="site">
+        <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }} className="site">
             <div className="sketch">
                 <div className="bee-sketch red"></div>
                 <div className="bee-sketch blue"></div>

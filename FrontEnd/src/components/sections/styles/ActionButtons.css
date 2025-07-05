@@ -19,6 +19,22 @@
     transform: translate(-100%, -60%);
 }
 
+@media screen and (max-width: 320px) {
+    .btn-hire-me, .btn-contact-me {
+        position: relative;
+        font-size: 0.8em;
+        padding: 10px 20px;
+    }
+
+    .btn-contact-me{
+        transform: translate(70%, -260%);
+    }
+
+    .btn-hire-me{
+        transform: translate(235%, -150%);
+    }
+}
+
 @media screen and (min-width:376px) and (max-width: 480px)  {
     .btn-hire-me, .btn-contact-me {
         position: relative;
@@ -27,7 +43,7 @@
     }
 
     .btn-contact-me{
-        transform: translate(110%, -240%);
+        transform: translate(100%, -240%);
     }
 
     .btn-hire-me{
@@ -41,7 +57,7 @@
 }
 
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 375px) and (min-width: 321px) {
     .btn-hire-me, .btn-contact-me {
         position: relative;
         font-size: 0.8em;
@@ -55,8 +71,7 @@
     .btn-hire-me{
         transform: translate(235%, -150%);
     }
-    
-    
+     
 }
 
 @media screen and (min-width: 481px) and (max-width: 580px) {
@@ -125,13 +140,63 @@
 }
 
 @media (min-width: 880px) and (max-width: 980px)  {
+    .btn-contact-me{
+        transform: translate(-300px, -115px);
+    }
 
+    .btn-hire-me{
+        transform: translate(250px, -150%);
+    }
 }
 
-@media (min-width: 980px) and (max-width: 1024px)  {
+@media (min-width: 980px) and (max-width: 1080px)  {
+    .btn-contact-me{
+        transform: translate(-300px, -115px);
+    }
 
+    .btn-hire-me{
+        transform: translate(300px, -150%);
+    }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1366px){
+@media screen and (min-width: 1081px) and (max-width: 1180px){
+    .btn-contact-me{
+        transform: translate(-300px, -115px);
+    }
+
+    .btn-hire-me{
+        transform: translate(350px, -150%);
+    }  
+}
+
+@media screen and (min-width: 1181px) and (max-width: 1280px) {
+    .btn-contact-me{
+        transform: translate(-290px, -115px);
+    }
+
+    .btn-hire-me{
+        transform: translate(410px, -150%);
+    }     
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1370px) {
+    .btn-hire-me{
+        transform: translate(470px, -60%);
+    }  
+}
+
+@media (min-width: 1441px) and (max-width: 1600px) {
+    
+}
+
+@media (min-width: 1601px) and (max-width: 1920px) {
+    
+}
+
+@media (min-width: 1921px) and (max-width: 2260px) {
+     
+}
+
+@media screen and (min-width: 2261px) and (max-width: 2560px) {
     
 }

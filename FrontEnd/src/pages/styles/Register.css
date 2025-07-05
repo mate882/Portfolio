@@ -260,28 +260,28 @@
   }
 
   .email1{
-    width: 20%;
+    width: 15%;
     margin-left: 2%;
     margin-top: 5%;
   }
 
   .password1{
-    width: 20%;
+    width: 15%;
     margin-left: 2%;
     margin-top: 25%;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 
   .password2{
-    width: 20%;
+    width: 15%;
     margin-left: 2%;
     margin-top: 45%;
-    font-size: 0.4rem;
+    font-size: 0.6rem;
   }
 
   .container3 {
     margin-left: -35%;
-    margin-top: 130%;
+    margin-top: 150%;
   }
   
 }
@@ -408,13 +408,70 @@
 }
 
 @media (min-width: 880px) and (max-width: 980px)  {
+  .signup {
+    margin-left: 40%;
+    margin-top: -10%;
+  }
 
+  .email1{
+    width: 45%;
+    margin-left: 13%;
+    margin-top: 5%;
+  }
+
+  .password1{
+    width: 45%;
+    margin-left: 13%;
+    margin-top: 12%;
+  }
+
+  .password2{
+    width: 45%;
+    margin-left: 13%;
+    margin-top: 19%;
+  }
+
+  .container3 {
+    margin-left: 0px;
+    margin-top: 50vh;
+  }
 }
 
-@media (min-width: 980px) and (max-width: 1024px)  {
+@media (min-width: 980px) and (max-width: 1080px)  {
+  .signup {
+    margin-left: 39%;
+  }
 
+  .email1{
+    margin-left: 27%;
+    margin-top: 0%;
+  }
+
+  .password1{
+    margin-left: 27%;
+    margin-top: 7%;
+  }
+
+  .password2{
+    margin-left: 27%;
+    margin-top: 14%;
+  }
+
+  .container3 {
+    margin-left: -20px;
+    margin-top: 40vh;
+  }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1366px){
-    
+@media screen and (min-width: 1081px) and (max-width: 1180px){
+  .container3 {
+    margin-left: 30px;
+    margin-top: 40vh;
+  }
+}
+
+@media screen and (min-width: 1181px) and (max-width: 1280px) {
+  .signup {
+    margin-left: 41%;
+  }  
 }

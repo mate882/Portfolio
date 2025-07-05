@@ -130,7 +130,7 @@
     color: #316c40;
     font-family: 'Courier New', Courier, monospace;
     transform: translate(250%, 150%);
-    margin-left: 1%;
+    margin-left: -1%;
 }
 
 .email a{
@@ -263,7 +263,7 @@
     }
 
     .email{
-        transform: translate(0%, 150%);
+        transform: translate(0px, 150%);
         margin-left: 1%;
         font-size: 0.8em;
     }
@@ -364,7 +364,7 @@
 
 @media screen and (min-width: 580px) and (max-width: 680px){
     .email{
-        transform: translate(0px, 60px);
+        transform: translate(10px, 60px);
     }
 
     .title1{
@@ -452,31 +452,55 @@
 
     .truelancer{
         width: 15%;
-        transform: translate(-520%, 270%);
+        transform: translate(-520%, 250%);
     }
 }
 
 
 @media (min-width: 681px) and (max-width: 780px) {
     .email{
-        transform: translate(0px, 70px);
+        transform: translate(20px, 70px);
     }
 }
 
 @media (min-width: 781px) and (max-width: 880px) {
     .email{
-        transform: translate(0px, 70px);
+        transform: translate(20px, 70px);
     }
 }
 
 @media (min-width: 880px) and (max-width: 980px)  {
-
+    .email{
+        transform: translate(20px, 70px);
+    }
 }
 
-@media (min-width: 980px) and (max-width: 1024px)  {
-
+@media (min-width: 980px) and (max-width: 1080px)  {
+    .email{
+        transform: translate(575px, 30px);
+    } 
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1366px){
-    
+@media screen and (min-width: 1081px) and (max-width: 1180px){
+    .email{
+        transform: translate(620px, 30px);
+    } 
+}
+
+@media screen and (min-width: 1181px) and (max-width: 1280px) {
+    .email{
+        transform: translate(780px, 30px);
+    } 
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1370px) {
+    .email{
+        transform: translate(890px, 30px);
+    } 
+}
+
+@media screen and (min-width: 1441px) {
+    .email{
+        transform: translate(50px, 60px);
+    }
 }

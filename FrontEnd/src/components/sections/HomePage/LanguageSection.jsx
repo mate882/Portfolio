@@ -23,7 +23,7 @@ import UnitedKingdom from '../../../assets/images/United Kingdom.webp'
 
 function LanguageSection(){
     return(
-        <div className="l" data-aos="fade-right" data-aos-delay="300">
+        <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }} className="l" data-aos="fade-right" data-aos-delay="300">
             <p className="prl1">Tech Skills</p>
             <div className="ProgrammingLan">
                 <div className="prl">

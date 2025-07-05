@@ -11,7 +11,7 @@ function ProjectDetail() {
     if (!project) return <h2>Project Not Found</h2>;
 
     return(
-        <div>
+        <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }}>
             <Link to="/#services"  className="back-btn">{'<'}  Back</Link>
             <div className="project-detail">
                 <h2>{project.title}</h2>

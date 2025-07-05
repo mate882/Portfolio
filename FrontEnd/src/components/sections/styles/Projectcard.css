@@ -305,11 +305,11 @@
 	}
 
 	.project-title{
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 
 	.project-description {
-		font-size: 0.6rem;
+		font-size: 0.5rem;
 	}
 
 	.project-card {
@@ -342,11 +342,11 @@
 	}
 
 	.project-title{
-		font-size: 0.9rem;
+		font-size: 0.8rem;
 	}
 
 	.project-description {
-		font-size: 0.5rem;
+		font-size: 0.4rem;
 	}
 
 	.project-card {
@@ -588,13 +588,75 @@
 }
 
 @media (min-width: 880px) and (max-width: 980px)  {
+	.frontend-section, .backend-section, .fullstack-section {
+		position: relative;
+		transform: none;
+		top: 1250px;
+		margin-left: 50px;
+	}
+
+	.project-title{
+		font-size: 1.2rem;
+	}
+
+	.project-description {
+		font-size: 0.68rem;
+	}
+
+
+	.prev-btn{
+		left: 250px;
+	}
+
+	.next-btn{
+		left: 330px;
+	}
+
+	.site{
+		transform: translateY(1500px);
+	}
+
+	.errorh {
+		transform: translate(0px, -210px);
+		font-size: 2em;
+	}
+
+	.sketch {
+		top: -200px;
+		min-width: 360px;
+	}
 
 }
+@media screen and (min-width: 981px) and (max-width: 1440px) {
+	.site{
+		transform: translateY(1500px);
+	}
 
-@media (min-width: 980px) and (max-width: 1024px)  {
+	.errorh {
+		transform: translate(0px, -210px);
+		font-size: 2em;
+	}
 
+	.sketch {
+		top: -200px;
+		min-width: 360px;
+	}
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1366px){
-    
+
+@media screen and (min-width: 1441px) {
+	.site{
+		transform: translateY(1500px);
+	}
+
+	.errorh {
+		transform: translate(-80px, -300px);
+		font-size: 3.5em;
+	}
+
+	.sketch {
+		top: -300px;
+		min-width: 360px;
+	}
 }
+

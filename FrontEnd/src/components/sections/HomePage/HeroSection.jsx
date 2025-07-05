@@ -5,7 +5,7 @@ import '../styles/HeroSection.css'
 
 function HeroSection(){
     return(
-        <div className="Herosection">
+        <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }} className="Herosection">
             <img src={Background} alt=""  data-aos="zoom-in" />
             <h1>Hi Everyone</h1>
             <p data-aos="fade-up" data-aos-delay="300">

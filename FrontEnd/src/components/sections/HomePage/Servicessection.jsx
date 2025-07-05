@@ -17,7 +17,7 @@ function Projects() {
     }, [hash]);
 
     return (
-        <div id="services">
+        <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }} id="services">
             <div className="tabs">
                 <section
                     className={`project frontend ${activeSection === "frontend" ? "active" : ""}`}

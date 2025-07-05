@@ -22,7 +22,7 @@ import workana from '../../assets/logos/Freelancing/Workana.png';
 function Footer(){
     
     return(
-        <footer id="footer">
+        <footer  id="footer">
             <div className="container"> 
                 <p className="mywebsite">&copy; 2025 Matthew's Website. All rights reserved.</p>
                 <p className="email">My Email:  <a href="mailto:matthew.anderson.tech@gmail.com">matthew.anderson.tech@gmail.com</a></p>

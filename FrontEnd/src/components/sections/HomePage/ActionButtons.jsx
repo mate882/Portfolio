@@ -8,7 +8,7 @@ import Button from '../../common/Button'
 
 function SocialLinks(){
     return(
-        <div className="freelancelinks">
+        <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }} className="freelancelinks">
             <Button className="btn-hire-me"><Link style={{textDecoration:'none', color: '#fdfff6' }} to="/hireme">Hire Me</Link></Button>
             <Button className="btn-contact-me"> <a href="#footer"
                         style={{ textDecoration: 'none', color: '#fdfff6', cursor: 'pointer' }}

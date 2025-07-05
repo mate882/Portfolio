@@ -50,7 +50,7 @@ function Login({ setToken }) {
         };
 
   return (
-    <form data-aos="fade-up" data-aos-delay="300" onSubmit={handleSubmit}>
+    <form style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }} data-aos="fade-up" data-aos-delay="300" onSubmit={handleSubmit}>
         <div>
         {fromRegister && (
                 <div className='success-message' style={{
