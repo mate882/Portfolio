@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from datetime import timedelta
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,6 @@ SECRET_KEY = 'django-insecure-9ht3&4+(@232%rq#3bbyy5e9%8@x0^39bm9v&8qw7l7@5hwh(f
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -122,11 +122,11 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Portfolio',
-        'USER': 'postgres',
-        'PASSWORD': '11080310',
-        'HOST': 'localhost',
-        'PORT': '5504',
+        'NAME': os.environ.get('Portfolio'),
+        'USER': os.environ.get('postgres'),
+        'PASSWORD': os.environ.get('11080310'),
+        'HOST': os.environ.get('localhost'),
+        'PORT': os.environ.get('5504'),
     }
 }
 

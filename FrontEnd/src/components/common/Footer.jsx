@@ -2,7 +2,7 @@ import React  from "react";
 import "./styles/Footer.css"
 
 import Discord from '../../assets/logos/SocialMedia/Discord.webp';
-import Github from '../../assets/logos/SocialMedia/Github.png';
+import Github from '../../assets/logos/SocialMedia/GIthub.png';
 import Instagram from '../../assets/logos/SocialMedia/Instagram.webp';
 import linkedin from '../../assets/logos/SocialMedia/LinkedIn.png';
 import slack from '../../assets/logos/SocialMedia/Slack.png';

@@ -1,6 +1,6 @@
 
 import React from "react";
-import Background from '../../../assets/images/Background.PNG';
+import Background from '../../../assets/images/Background.png';
 import '../styles/HeroSection.css'
 
 function HeroSection(){

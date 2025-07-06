@@ -1,0 +1,21 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy only package files first for caching
+COPY FrontEnd/package.json FrontEnd/package-lock.json ./
+
+RUN npm install
+
+# Copy the rest of the frontend source code
+COPY FrontEnd/ .
+
+# Build your frontend assets
+RUN npm run build
+
+# Use nginx to serve build files
+FROM nginx:alpine
+
+COPY --from=0 /app/dist /usr/share/nginx/html
+
+CMD ["nginx", "-g", "daemon off;"]
