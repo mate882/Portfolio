@@ -2,6 +2,7 @@
 services:
   db:
     image: postgres:15
+    container_name: postgres-db
     environment:
       POSTGRES_DB: Portfolio
       POSTGRES_USER: postgres
@@ -13,29 +14,32 @@ services:
 
   backend:
     build:
-      context: .
-      dockerfile: Dockerfile.backend
+      context: ./BackEnd
+    container_name: backend-container
+    working_dir: /app/Backend  
     volumes:
-        - ./BackEnd/Backend:/app
+      - ./BackEnd:/app
     ports:
-      - "8000:8000"
+      - "8001:8000"
     depends_on:
       - db
     environment:
-        - DB_NAME=Portfolio
-        - DB_USER=postgres
-        - DB_PASSWORD=11080310
-        - DB_HOST=db
-        - DB_PORT=5432
+      - DB_NAME=Portfolio
+      - DB_USER=postgres
+      - DB_PASSWORD=11080310
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DEBUG=1
+    command: python manage.py runserver 0.0.0.0:8000
 
   frontend:
     build:
-      context: .
-      dockerfile: Dockerfile.frontend
+      context: ./FrontEnd
+    container_name: frontend-container
     ports:
-      - "3000:80"
-    depends_on:
-      - backend
+      - "3000:5173"
+    working_dir: /app
+    command: npm start
 
 volumes:
   postgres_data:

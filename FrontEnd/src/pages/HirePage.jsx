@@ -58,7 +58,7 @@ function ContactForm() {
   return (
     <>
      {isSent ? (
-      <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }} className="loop-wrapper">
+      <div className="loop-wrapper">
         <p className='sending'>Is Sending...</p>
         <div className="mountain"></div>
         <div className="hill"></div>
@@ -70,7 +70,7 @@ function ContactForm() {
         <div className="wheels"></div>
       </div>
     ) :(
-    <form style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 1rem' }} className="request-form" onSubmit={handleSubmit}>
+    <form className="request-form" onSubmit={handleSubmit}>
       <label htmlFor="email">Email(Where we can continue communication):</label>
       <input
         id="email"
