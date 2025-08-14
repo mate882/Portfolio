@@ -956,8 +956,8 @@
                 <h3>Languages I Speak</h3>
                 <div class="language-list">
                     <div class="language-item">🇬🇪 Georgian (Native)</div>
-                    <div class="language-item">🇺🇸 English (Conversational)</div>
-                    <div class="language-item">🇷🇺 Russian (Fluent)</div>
+                    <div class="language-item">🇺🇸 English (Fluent)</div>
+                    <div class="language-item">🇮🇹 Italian (Conversational)</div>
                 </div>
             </div>
         </div>
@@ -1454,6 +1454,21 @@
                         
                         // Reset the form
                         contactForm.reset();
+                        
+                        // Navigate to home page after form submission
+                        setTimeout(() => {
+                            // Smooth scroll to home section
+                            const homeSection = document.getElementById('home');
+                            if (homeSection) {
+                                const headerHeight = document.querySelector('header').offsetHeight;
+                                const targetPosition = homeSection.offsetTop - headerHeight;
+                                
+                                window.scrollTo({
+                                    top: targetPosition,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }, 4000); // Navigate after the success message is shown
                     }, 1000);
                 });
             }
