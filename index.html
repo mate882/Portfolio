@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Anderson - Full-Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0D1117;
+            color: #F5F5F5;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Delivery Animation Styles */
+        .delivery-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #009688;
+            z-index: 10000;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .delivery-overlay.show {
+            display: flex;
+        }
+
+        .loop-wrapper {
+            margin: 0 auto;
+            position: relative;
+            display: block;
+            width: 600px;
+            height: 250px;
+            overflow: hidden;
+            border-bottom: 3px solid #fff;
+            color: #fff;
+        }
+
+        .mountain {
+            position: absolute;
+            right: -900px;
+            bottom: -20px;
+            width: 2px;
+            height: 2px;
+            box-shadow: 
+                0 0 0 50px #4DB6AC,
+                60px 50px 0 70px #4DB6AC,
+                90px 90px 0 50px #4DB6AC,
+                250px 250px 0 50px #4DB6AC,
+                290px 320px 0 50px #4DB6AC,
+                320px 400px 0 50px #4DB6AC;
+            transform: rotate(130deg);
+            animation: mtn 20s linear infinite;
+        }
+
+        .hill {
+            position: absolute;
+            right: -900px;
+            bottom: -50px;
+            width: 400px;
+            border-radius: 50%;
+            height: 20px;
+            box-shadow: 
+                0 0 0 50px #4DB6AC,
+                -20px 0 0 20px #4DB6AC,
+                -90px 0 0 50px #4DB6AC,
+                250px 0 0 50px #4DB6AC,
+                290px 0 0 50px #4DB6AC,
+                620px 0 0 50px #4DB6AC;
+            animation: hill 4s 2s linear infinite;
+        }
+
+        .tree, .tree:nth-child(2), .tree:nth-child(3) {
+            position: absolute;
+            height: 100px; 
+            width: 35px;
+            bottom: 0;
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/tree.svg) no-repeat;
+        }
+
+        .rock {
+            margin-top: -17%;
+            height: 2%; 
+            width: 2%;
+            bottom: -2px;
+            border-radius: 20px;
+            position: absolute;
+            background: #ddd;
+        }
+
+        .truck, .wheels {
+            transition: all ease;
+            width: 85px;
+            margin-right: -60px;
+            bottom: 0px;
+            right: 50%;
+            position: absolute;
+            background: #eee;
+        }
+
+        .truck {
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/truck.svg) no-repeat;
+            background-size: contain;
+            height: 60px;
+        }
+
+        .truck:before {
+            content: " ";
+            position: absolute;
+            width: 25px;
+            box-shadow:
+                -30px 28px 0 1.5px #fff,
+                -35px 18px 0 1.5px #fff;
+        }
+
+        .wheels {
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/wheels.svg) no-repeat;
+            height: 15px;
+            margin-bottom: 0;
+        }
+
+        .tree { animation: tree 3s 0.000s linear infinite; }
+        .tree:nth-child(2) { animation: tree2 2s 0.150s linear infinite; }
+        .tree:nth-child(3) { animation: tree3 8s 0.050s linear infinite; }
+        .rock { animation: rock 4s -0.530s linear infinite; }
+        .truck { animation: truck 4s 0.080s ease infinite; }
+        .wheels { animation: truck 4s 0.001s ease infinite; }
+        .truck:before { animation: wind 1.5s 0.000s ease infinite; }
+
+        .delivery-message {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+        }
+
+        .success-message {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #fff;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .success-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes tree {
+            0% { transform: translate(1350px); }
+            50% {}
+            100% { transform: translate(-50px); }
+        }
+
+        @keyframes tree2 {
+            0% { transform: translate(650px); }
+            50% {}
+            100% { transform: translate(-50px); }
+        }
+
+        @keyframes tree3 {
+            0% { transform: translate(2750px); }
+            50% {}
+            100% { transform: translate(-50px); }
+        }
+
+        @keyframes rock {
+            0% { right: -200px; }
+            100% { right: 2000px; }
+        }
+
+        @keyframes truck {
+            0% {}
+            6% { transform: translateY(0px); }
+            7% { transform: translateY(-6px); }
+            9% { transform: translateY(0px); }
+            10% { transform: translateY(-1px); }
+            11% { transform: translateY(0px); }
+            100% {}
+        }
+
+        @keyframes wind {
+            0% {}
+            50% { transform: translateY(3px) }
+            100% {}
+        }
+
+        @keyframes mtn {
+            100% {
+                transform: translateX(-2000px) rotate(130deg);
+            }
+        }
+
+        @keyframes hill {
+            100% {
+                transform: translateX(-2000px);
+            }
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 17, 23, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 191, 255, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00BFFF;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #F5F5F5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00BFFF;
+        }
+
+        /* Hero Section */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #0D1117 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-text {
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00BFFF, #1E90FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #E6E6E6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #00BFFF;
+            color: #FFF;
+        }
+
+        .btn-primary:hover {
+            background: #1E90FF;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00BFFF;
+            border: 2px solid #00BFFF;
+        }
+
+        .btn-secondary:hover {
+            background: #00BFFF;
+            color: #FFF;
+            transform: translateY(-2px);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: #161B22;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00BFFF;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: #00BFFF;
+            color: #FFF;
+            transform: scale(1.1);
+        }
+
+        /* 3D Background */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            top: 0;
+            left: 0;
+        }
+
+        .shape {
+            position: absolute;
+            background: linear-gradient(45deg, rgba(0, 191, 255, 0.1), rgba(30, 144, 255, 0.05));
+            border-radius: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 5rem 0;
+            background: #161B22;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00BFFF;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: #CCC;
+            font-size: 1.1rem;
+        }
+
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: 2px solid #00BFFF;
+            border-radius: 25px;
+            color: #00BFFF;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #00BFFF;
+            color: #FFF;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .project-card {
+            background: #0D1117;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #00BFFF;
+            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #00BFFF, #1E90FF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #FFF;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #00BFFF;
+        }
+
+        .project-category {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #CCC;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            padding: 0.5rem 1rem;
+            background: #00BFFF;
+            color: #FFF;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .project-links a:hover {
+            background: #1E90FF;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        #about {
+            padding: 5rem 0;
+            background: #0D1117;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .skill-item {
+            background: #161B22;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.1);
+        }
+
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #00BFFF;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 10px;
+            background: #333;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00BFFF, #1E90FF);
+            border-radius: 5px;
+            animation: fillBar 2s ease-out;
+        }
+
+        @keyframes fillBar {
+            from { width: 0; }
+            to { width: var(--width); }
+        }
+
+        .languages {
+            margin: 3rem 0;
+        }
+
+        .languages h3 {
+            margin-bottom: 2rem;
+            color: #00BFFF;
+        }
+
+        .language-list {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 5rem 0;
+            background: #161B22;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-form {
+            background: #0D1117;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #00BFFF;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: #161B22;
+            border: 2px solid #333;
+            border-radius: 8px;
+            color: #F5F5F5;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00BFFF;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #0D1117;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links h4 {
+            color: #00BFFF;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00BFFF;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .project-filters {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .loop-wrapper {
+                width: 350px;
+                height: 150px;
+            }
+
+            .delivery-message {
+                font-size: 1.2rem;
+            }
+
+            .success-message {
+                font-size: 1rem;
+            }
+        }
+
+        /* Loading state */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            color: #00BFFF;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Delivery Animation Overlay -->
+    <div class="delivery-overlay" id="deliveryOverlay">
+        <div class="loop-wrapper">
+            <div class="mountain"></div>
+            <div class="hill"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="rock"></div>
+            <div class="truck"></div>
+            <div class="wheels"></div>
+        </div>
+        <div class="delivery-message">Delivering your message...</div>
+        <div class="success-message" id="successMessage">
+            ✅ Message sent successfully! I'll get back to you soon.
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Matthew Anderson</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-text" data-aos="fade-up" data-aos-delay="300">
+                <h1>Full-Stack Web Developer</h1>
+                <div class="hero-description">
+                    <p>
+                        My name is <strong>Mate</strong> (that's my Georgian name 🇬🇪 — internationally I go by <strong>Matthew Anderson</strong>).<br/><br/>
+                        I'm a <strong>Full-Stack Web Developer</strong> — building both <strong>Frontend 🖥️</strong> and <strong>Backend 🛠️</strong> systems.<br/><br/>
+                        Very soon, I'll also be selling full <strong>Web Design services 🎨</strong> — from beautiful custom designs to fully functional websites!<br/><br/>
+                        I speak <strong>three languages 🌍</strong> which helps me work with people from all over the world.<br/><br/>
+                        All the photos you see on this website are <strong>real pictures of me</strong> — just animated or stylized to match the design, but always truly me! 📸✨<br/><br/>
+                        I'm constantly learning, building, and growing 🚀 — ready to bring your vision to life!<br/><br/>
+                        📢 To stay updated on my latest projects and offers, you can join my <strong>Telegram</strong>, <strong>WhatsApp</strong>, <strong>Discord</strong> and etc groups (links below).<br/><br/>
+                        📬 For work inquiries, just click on <strong>Hire Me</strong> Button and write your message to my email or You can Just write me directly to <strong>Instagram</strong>
+                    </p>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Hire Me</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+                
+                <div class="social-links" data-aos="fade-up" data-aos-delay="600">
+                    <a href="https://www.linkedin.com/in/matthew-anderson-223313363/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/mate882" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://discord.com/channels/1404867889953247334/1404867891135778988" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="https://join.slack.com/t/codecraft-ryt4468/shared_invite/zt-3b7elt7j9-IsiAI0hGNCrKQVRhgr6lUg" target="_blank" title="Slack"><i class="fab fa-slack"></i></a>
+                    <a href="https://t.me/+qeO70kk_IDEwNGIy" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://wa.me/995598405220" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/matthewanderson_2008/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@codecraftacademy1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@CodeCraftAcademy-f3k" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/MatthewAnd78451" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-header" data-aos="fade-up">
+            <h2>My Projects</h2>
+            <p>Explore my work across Frontend, Backend, and Full-Stack development</p>
+        </div>
+        
+        <div class="project-filters" data-aos="fade-up" data-aos-delay="200">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="frontend">👨🏻‍💻 Frontend</button>
+            <button class="filter-btn" data-filter="backend">🔩 Backend</button>
+            <button class="filter-btn" data-filter="fullstack">🕸️ Full-Stack</button>
+        </div>
+        
+        <div class="projects-grid" id="projects-grid">
+            <div class="loading">Loading projects...</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>About Me</h2>
+                <p>Get to know more about my skills, experience, and background</p>
+            </div>
+            
+            <div class="skills-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-item">
+                    <div class="skill-name">HTML & CSS</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--width: 88%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Django</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">SQL</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Git & Version Control</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="languages" data-aos="fade-up" data-aos-delay="400">
+                <h3>Languages I Speak</h3>
+                <div class="language-list">
+                    <div class="language-item">🇬🇪 Georgian (Native)</div>
+                    <div class="language-item">🇺🇸 English (Conversational)</div>
+                    <div class="language-item">🇷🇺 Russian (Fluent)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Get In Touch</h2>
+                <p>Ready to work together? Let's create something amazing!</p>
+            </div>
+            
+            <form class="contact-form" data-aos="fade-up" data-aos-delay="200" action="https://formsubmit.co/matthew.anderson.tech@gmail.com" method="POST" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <input type="hidden" name="_captcha" value="false">
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Matthew's Website. All rights reserved.</p>
+            <p>My Email: <a href="mailto:matthew.anderson.tech@gmail.com">matthew.anderson.tech@gmail.com</a></p>
+            
+            <div class="footer-links">
+                <h4>Social Media</h4>
+                <a href="https://www.linkedin.com/in/matthew-anderson-223313363/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/mate882" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/matthewanderson_2008/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/@CodeCraftAcademy-f3k" target="_blank">YouTube</a>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Freelance Platforms</h4>
+                <a href="https://www.fiverr.com/users/matthew_2008/seller_dashboard" target="_blank">Fiverr</a>
+                <a href="https://www.peopleperhour.com/freelancer/matthew-anderson-full-stack-web-developer-zyjwqjay" target="_blank">PeoplePerHour</a>
+                <a href="https://www.upwork.com/freelancers/~01cdb2ae93cf763fe3" target="_blank">Upwork</a>
+                <a href="https://www.workana.com/freelancer/aa7b5681549252e609c05d580da59cf7" target="_blank">Workana</a>
+                <a href="https://www.truelancer.com/freelancer/matthewanderson20" target="_blank">Truelancer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+
+        // Project images mapping
+        const projectImages = {
+            // Frontend projects with real screenshots/images
+            'Calculator Website': 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop',
+            'Finance Tracker': 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=300&fit=crop',
+            'Password Generator': 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop',
+            'Quiz App': 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=300&fit=crop',
+            'Movie Search Website': 'https://images.unsplash.com/photo-1489599843821-47146f0daa32?w=400&h=300&fit=crop',
+            'Animations Library': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
+            'Weather Website': 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop',
+            'Landing Page': 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop',
+            '3D Project': 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=400&h=300&fit=crop',
+            'Snake Game': 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop',
+            
+            // Backend projects
+            'BlogAPI': 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop',
+            'Auth System': 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop',
+            'E-Wallet': 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop',
+            'Job Board': 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=300&fit=crop',
+            'Inventory Management System': 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop',
+            'URL Shortener': 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=400&h=300&fit=crop',
+            'Renting System': 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop',
+            'User Management System': 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop',
+            'Loan System': 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop',
+            'Polling System': 'https://images.unsplash.com/photo-1586776977607-310e9c725c37?w=400&h=300&fit=crop',
+            
+            // Full-stack projects
+            'InvoiceGenerator': 'https://images.unsplash.com/photo-1554224154-26032fced8bd?w=400&h=300&fit=crop',
+            'Student Grade Tracker': 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&h=300&fit=crop',
+            'Employee Management System': 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
+            'Content Brief Generator': 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=300&fit=crop',
+            'Recipes Book': 'https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400&h=300&fit=crop'
+        };
+
+        // Projects data
+        const FrontEndProjects = [
+            {
+                id: 1,
+                title: "Calculator Website",
+                category: "👨🏻‍💻FrontEnd",
+                image: "🔢",
+                description: "A fully functional calculator built using HTML, CSS, and JavaScript. It supports basic arithmetic and a dedicated scientific section (sin, cos, tan, log, exponent, parentheses, and more) with a responsive design, intuitive interface, and smooth button interactions—making calculations simple and visually appealing for users.",
+                github: "https://github.com/mate882/Calculator",
+                live: "https://mate882.github.io/Calculator/"
+            },
+            {
+                id: 2,
+                title: "Finance Tracker",
+                category: "👨🏻‍💻FrontEnd",
+                image: "💰",
+                description: "A personal finance tracking application that allows users to log income and expenses, visualize spending patterns, and manage budgets. Built with modern JavaScript features and responsive design for an engaging user experience.",
+                github: "https://github.com/mate882/FinanceTracker",
+                live: "https://mate882.github.io/FinanceTracker/"
+            },
+            {
+                id: 3,
+                title: "Password Generator",
+                category: "👨🏻‍💻FrontEnd",
+                image: "🔐",
+                description: "An interactive password generator tool that creates strong and secure passwords based on user-selected criteria. Features include customizable length, character types, and instant copy functionality, enhancing digital security for everyday users.",
+                github: "https://github.com/mate882/PasswordGenerator",
+                live: "https://mate882.github.io/PasswordGenerator/"
+            },
+            {
+                id: 4,
+                title: "Quiz App",
+                category: "👨🏻‍💻FrontEnd",
+                image: "❓",
+                description: "A dynamic quiz application designed to test knowledge across multiple categories. It features multiple-choice questions, real-time scoring, and responsive design, providing a fun and interactive experience for learners of all ages.",
+                github: "https://github.com/mate882/QuizApp",
+                live: "https://mate882.github.io/QuizApp/"
+            },
+            {
+                id: 5,
+                title: "Movie Search Website",
+                category: "👨🏻‍💻FrontEnd",
+                image: "🎬",
+                description: "A movie search website that fetches real-time movie data from an API. Users can search for titles, view ratings, summaries, and images, all presented in a clean, responsive interface, perfect for movie enthusiasts.",
+                github: "https://github.com/mate882/MovieSearchApp",
+                live: "https://mate882.github.io/MovieSearchApp/"
+            },
+            {
+                id: 6,
+                title: "Animations Library",
+                category: "👨🏻‍💻FrontEnd",
+                image: "✨",
+                description: "A library of reusable CSS and JavaScript animations for web projects. It includes fade, slide, bounce, and other visual effects, making it easy for developers to enhance UI and engage users without heavy frameworks.",
+                github: "https://github.com/mate882/AnimationsLibrary",
+                live: "https://mate882.github.io/AnimationsLibrary/"
+            },
+            {
+                id: 7,
+                title: "Weather Website",
+                category: "👨🏻‍💻FrontEnd",
+                image: "🌤️",
+                description: "A weather application that provides real-time forecasts and temperature updates based on user location. Features include responsive design, dynamic icons, and easy navigation, offering users a practical and visually appealing weather tool.",
+                github: "https://github.com/mate882/WeatherApp",
+                live: "https://mate882.github.io/WeatherApp/"
+            },
+            {
+                id: 8,
+                title: "Landing Page",
+                category: "👨🏻‍💻FrontEnd",
+                image: "📄",
+                description: "A professional landing page template with responsive design and clean layout. Includes interactive elements, smooth scrolling, and call-to-action sections, designed to effectively showcase products, services, or portfolios for any business.",
+                github: "https://github.com/mate882/LandingPage",
+                live: "https://mate882.github.io/LandingPage/"
+            },
+            {
+                id: 9,
+                title: "3D Project",
+                category: "👨🏻‍💻FrontEnd",
+                image: "🎲",
+                description: "A 3D web project showcasing interactive elements using modern web technologies. Includes animations and visual effects that provide depth and interactivity, creating an immersive experience for users exploring the 3D environment.",
+                github: "https://github.com/mate882/3D",
+                live: "https://mate882.github.io/3D/"
+            },
+            {
+                id: 10,
+                title: "Snake Game",
+                category: "👨🏻‍💻FrontEnd",
+                image: "🐍",
+                description: "A classic Snake game recreated with JavaScript, HTML, and CSS. Features smooth controls, increasing difficulty levels, and score tracking, providing a nostalgic yet interactive experience for users of all ages.",
+                github: "https://github.com/mate882/SnakeGame",
+                live: "https://mate882.github.io/SnakeGame/"
+            }
+        ];
+
+        const BackEndProjects = [
+            {
+                id: 11,
+                title: "BlogAPI",
+                category: "🔩BackEnd",
+                image: "📝",
+                description: "A RESTful API for managing blog content including posts, likes and deleting. Built with robust backend logic, it allows CRUD operations, secure authentication, and smooth data handling for scalable blogging applications.",
+                github: "https://github.com/mate882/BlogAPI",
+                live: "https://blogapi-dvop.onrender.com"
+            },
+            {
+                id: 12,
+                title: "Auth System",
+                category: "🔩BackEnd",
+                image: "🔑",
+                description: "A secure authentication system supporting registration, login. Built to handle user sessions safely, it ensures reliable access control and smooth integration for modern web applications.",
+                github: "https://github.com/mate882/AuthSystem",
+                live: "https://authsystem-93fq.onrender.com"
+            },
+            {
+                id: 13,
+                title: "E-Wallet",
+                category: "🔩BackEnd",
+                image: "💳",
+                description: "An online wallet system allowing users to manage digital transactions securely. Supports adding funds, sending and receiving money, and tracking transaction history, built with a focus on security and reliable backend processing.",
+                github: "https://github.com/mate882/E-Wallet",
+                live: "https://e-wallet-ci3j.onrender.com"
+            },
+            {
+                id: 14,
+                title: "Job Board",
+                category: "🔩BackEnd",
+                image: "💼",
+                description: "A backend system for posting, searching, and applying to jobs. Includes CRUD functionality for jobs and applications, user authentication, and data validation, providing a solid foundation for employment-focused platforms.",
+                github: "https://github.com/mate882/JobBoard",
+                live: "https://jobboard-nen8.onrender.com"
+            },
+            {
+                id: 15,
+                title: "Inventory Management System",
+                category: "🔩BackEnd",
+                image: "📦",
+                description: "A system to track and manage inventory efficiently. Handles product listings, stock updates, and reporting features, designed to optimize warehouse operations and streamline business inventory workflows with a reliable backend.",
+                github: "https://github.com/mate882/InventoryManagementSystem",
+                live: "https://inventorymanagementsystem-nc1i.onrender.com"
+            },
+            {
+                id: 16,
+                title: "URL Shortener",
+                category: "🔩BackEnd",
+                image: "🔗",
+                description: "A backend service that shortens long URLs and tracks click analytics. Provides fast redirection, secure storage, and easy API integration, ideal for developers and marketers needing efficient link management.",
+                github: "https://github.com/mate882/URLShortener",
+                live: "https://urlshortener-yzjx.onrender.com"
+            },
+            {
+                id: 17,
+                title: "Renting System",
+                category: "🔩BackEnd",
+                image: "🏠",
+                description: "A backend application for managing rentals of products or services. Supports bookings, inventory checks, and user authentication, providing a streamlined and secure system for rental operations and service management.",
+                github: "https://github.com/mate882/RentingSystem",
+                live: "https://rentingsystem-e51f.onrender.com"
+            },
+            {
+                id: 18,
+                title: "User Management System",
+                category: "🔩BackEnd",
+                image: "👥",
+                description: "A system for managing users, roles, and permissions. Includes registration, profile updates, and secure authentication features, allowing administrators to efficiently control access within applications while maintaining robust backend security.",
+                github: "https://github.com/mate882/UserManagementSystem",
+                live: "https://usermanagementsystem-uzy7.onrender.com"
+            },
+            {
+                id: 19,
+                title: "Loan System",
+                category: "🔩BackEnd",
+                image: "💴",
+                description: "A backend application for managing loan applications, approvals, and repayments. Features secure data handling, transaction tracking, and user management to provide a complete solution for financial loan systems.",
+                github: "https://github.com/mate882/LoanSystem",
+                live: "https://loansystem-veta.onrender.com"
+            },
+            {
+                id: 20,
+                title: "Polling System",
+                category: "🔩BackEnd",
+                image: "🗳️",
+                description: "A backend for creating and managing polls with secure voting. Supports multiple poll types, user authentication, and result tracking, providing a reliable infrastructure for surveys and online voting applications.",
+                github: "https://github.com/mate882/PollingSystem",
+                live: "https://pollingsystem-2sb9.onrender.com"
+            }
+        ];
+
+        const FullStackProjects = [
+            {
+                id: 21,
+                title: "InvoiceGenerator",
+                category: "🕸️FullStack",
+                image: "🧾",
+                description: "A full-stack application for generating professional invoices. Users can create, edit, download and send invoices to clients by email from website, with backend database management ensuring data persistence and frontend interactivity providing a seamless user experience.",
+                github: "https://github.com/mate882/InvoiceGenerator",
+                live: "https://invoicegenerator-ay9l.onrender.com"
+            },
+            {
+                id: 22,
+                title: "Student Grade Tracker",
+                category: "🕸️FullStack",
+                image: "📊",
+                description: "An application for tracking student grades, courses, and performance. Combines a robust backend for data storage with an interactive frontend interface, enabling educators to manage academic records efficiently and intuitively.",
+                github: "https://github.com/mate882/StudentGradeTracker",
+                live: "https://studentgradetracker.onrender.com"
+            },
+            {
+                id: 23,
+                title: "Employee Management System",
+                category: "🕸️FullStack",
+                image: "👷",
+                description: "A complete system for managing employees, departments, and roles. Offers CRUD operations, secure authentication, and role-based access, integrating a backend database with a responsive frontend to streamline HR processes.",
+                github: "https://github.com/mate882/EmployeeManagementSystem",
+                live: "https://employeemanagementsystem-1yyr.onrender.com/"
+            },
+            {
+                id: 24,
+                title: "Content Brief Generator",
+                category: "🕸️FullStack",
+                image: "📋",
+                description: "A full-stack tool for generating content briefs automatically. Users input basic details, and the system creates structured briefs, combining backend processing with an intuitive frontend interface to enhance productivity for content creators.",
+                github: "https://github.com/mate882/ContentBriefGenerator",
+                live: "https://contentbriefgenerator.onrender.com"
+            },
+            {
+                id: 25,
+                title: "Recipes Book",
+                category: "🕸️FullStack",
+                image: "👨‍🍳",
+                description: "An application for creating, organizing, and sharing recipes. Features include user authentication, recipe CRUD operations, and a responsive frontend, providing a complete platform for culinary enthusiasts to manage and explore recipes.",
+                github: "https://github.com/mate882/RecipeBook",
+                live: "https://recipebook-jxxl.onrender.com"
+            }
+        ];
+
+        // Combine all projects
+        const allProjects = [...FrontEndProjects, ...BackEndProjects, ...FullStackProjects];
+        let currentFilter = 'all';
+
+        // Render projects
+        function renderProjects(projects) {
+            const projectsGrid = document.getElementById('projects-grid');
+            
+            if (projects.length === 0) {
+                projectsGrid.innerHTML = '<div class="loading">No projects found for this category.</div>';
+                return;
+            }
+            
+            projectsGrid.innerHTML = '';
+
+            projects.forEach((project, index) => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card';
+                projectCard.setAttribute('data-aos', 'fade-up');
+                projectCard.setAttribute('data-aos-delay', (index % 6) * 100);
+                
+                // Check if project has a real image, otherwise use emoji
+                const hasImage = projectImages[project.title];
+                const imageContent = hasImage 
+                    ? `<img src="${projectImages[project.title]}" alt="${project.title}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">`
+                    : '';
+                
+                projectCard.innerHTML = `
+                    <div class="project-image">
+                        ${imageContent}
+                        <div style="display: ${hasImage ? 'none' : 'flex'}; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 3rem;">${project.image}</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-category">${project.category}</p>
+                        <p class="project-description">${project.description}</p>
+                        <div class="project-links">
+                            <a href="${project.live}" target="_blank">View Live</a>
+                            <a href="${project.github}" target="_blank">View Code</a>
+                        </div>
+                    </div>
+                `;
+                
+                projectsGrid.appendChild(projectCard);
+            });
+            
+            // Refresh AOS animations
+            AOS.refresh();
+        }
+
+        // Filter projects
+        function filterProjects(filter) {
+            currentFilter = filter;
+            
+            // Update filter button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-filter="${filter}"]`).classList.add('active');
+            
+            // Filter and render projects
+            let filteredProjects = allProjects;
+            
+            if (filter === 'frontend') {
+                filteredProjects = FrontEndProjects;
+            } else if (filter === 'backend') {
+                filteredProjects = BackEndProjects;
+            } else if (filter === 'fullstack') {
+                filteredProjects = FullStackProjects;
+            }
+            
+            renderProjects(filteredProjects);
+        }
+
+        // Delivery animation functions
+        function showDeliveryAnimation() {
+            const overlay = document.getElementById('deliveryOverlay');
+            const successMessage = document.getElementById('successMessage');
+            
+            overlay.classList.add('show');
+            
+            // Show success message after 3 seconds
+            setTimeout(() => {
+                successMessage.classList.add('show');
+            }, 3000);
+            
+            // Hide the entire overlay after 5 seconds
+            setTimeout(() => {
+                overlay.classList.remove('show');
+                successMessage.classList.remove('show');
+            }, 5000);
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial render with a small delay to ensure DOM is ready
+            setTimeout(() => {
+                renderProjects(allProjects);
+            }, 100);
+            
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    filterProjects(filter);
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Form submission handling with delivery animation
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show delivery animation immediately
+                    showDeliveryAnimation();
+                    
+                    // Submit the form after a short delay
+                    setTimeout(() => {
+                        // Create a temporary form to submit the data
+                        const tempForm = document.createElement('form');
+                        tempForm.action = contactForm.action;
+                        tempForm.method = contactForm.method;
+                        tempForm.style.display = 'none';
+                        
+                        // Copy all form data
+                        const formData = new FormData(contactForm);
+                        for (let [key, value] of formData.entries()) {
+                            const input = document.createElement('input');
+                            input.type = 'hidden';
+                            input.name = key;
+                            input.value = value;
+                            tempForm.appendChild(input);
+                        }
+                        
+                        document.body.appendChild(tempForm);
+                        tempForm.submit();
+                        
+                        // Reset the form
+                        contactForm.reset();
+                    }, 1000);
+                });
+            }
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(13, 17, 23, 0.98)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 191, 255, 0.15)';
+            } else {
+                header.style.background = 'rgba(13, 17, 23, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 191, 255, 0.1)';
+            }
+        });
+
+        // Error handling for projects loading
+        window.addEventListener('error', function(e) {
+            console.error('Error loading content:', e);
+            const projectsGrid = document.getElementById('projects-grid');
+            if (projectsGrid && projectsGrid.innerHTML.includes('Loading')) {
+                projectsGrid.innerHTML = '<div class="loading">Error loading projects. Please refresh the page.</div>';
+            }
+        });
+    </script>
+</body>
+</html>
