@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew Anderson - Full-Stack Developer</title>
+    <link rel="icon" href="icon.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
@@ -21,6 +22,202 @@
             color: #F5F5F5;
             overflow-x: hidden;
             line-height: 1.6;
+        }
+
+        .hero-avatar {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInLeft 1s ease-out 0.4s both;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-container img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                0 0 0 10px rgba(255, 255, 255, 0.1),
+                inset 0 0 0 3px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .avatar-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .tech-icon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.2) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Individual positioning and animations for each icon */
+        .tech-icon:nth-child(1) {
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 0s;
+        }
+
+        .tech-icon:nth-child(2) {
+            top: 60px;
+            right: 20px;
+            animation-delay: 1s;
+        }
+
+        .tech-icon:nth-child(3) {
+            bottom: 60px;
+            right: 20px;
+            animation-delay: 2s;
+        }
+
+        .tech-icon:nth-child(4) {
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 3s;
+        }
+
+        .tech-icon:nth-child(5) {
+            bottom: 60px;
+            left: 20px;
+            animation-delay: 4s;
+        }
+
+        .tech-icon:nth-child(6) {
+            top: 60px;
+            left: 20px;
+            animation-delay: 5s;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+            66% {
+                transform: translateY(10px) rotate(-5deg);
+            }
+        }
+
+        /* Fade in animation */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Pulse effect for the entire container */
+        .avatar-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.2;
+            }
+        }
+
+        /* Orbit animation for tech icons */
+        .floating-icons::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 280px;
+            height: 280px;
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .avatar-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .avatar-container img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .tech-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
         }
 
         /* Delivery Animation Styles */
@@ -262,7 +459,7 @@
             color: #00BFFF;
         }
 
-        /* Hero Section */
+        /* Hero Section - NEW LAYOUT */
         #home {
             min-height: 100vh;
             display: flex;
@@ -279,15 +476,15 @@
             margin: 0 auto;
             padding: 0 2rem;
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: center;
-            text-align: center;
             z-index: 2;
         }
 
         .hero-text {
             z-index: 2;
+            text-align: left;
         }
 
         .hero-text h1 {
@@ -301,21 +498,76 @@
         }
 
         .hero-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.5;
             margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
             color: #E6E6E6;
+            max-width: 500px;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            justify-content: center;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
+        }
+
+        /* Avatar Section */
+        .hero-avatar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background: linear-gradient(135deg, #00BFFF20, #1E90FF20);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0, 191, 255, 0.3);
+        }
+
+        .avatar-svg {
+            width: 280px;
+            height: 380px;
+        }
+
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tech-icon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #00BFFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .tech-icon:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
+        .tech-icon:nth-child(2) { top: 30%; right: -10%; animation-delay: 1s; }
+        .tech-icon:nth-child(3) { bottom: 30%; left: -10%; animation-delay: 2s; }
+        .tech-icon:nth-child(4) { bottom: 10%; right: -10%; animation-delay: 0.5s; }
+        .tech-icon:nth-child(5) { top: 50%; left: -15%; animation-delay: 1.5s; }
+        .tech-icon:nth-child(6) { top: 50%; right: -15%; animation-delay: 2.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
         }
 
         .btn {
@@ -356,7 +608,6 @@
         .social-links {
             display: flex;
             gap: 1rem;
-            justify-content: center;
             flex-wrap: wrap;
         }
 
@@ -420,11 +671,6 @@
             top: 80%;
             left: 20%;
             animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(180deg); }
         }
 
         /* Projects Section */
@@ -506,24 +752,34 @@
         .project-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(45deg, #00BFFF, #1E90FF);
+            background: linear-gradient(45deg, #00BFFF20, #1E90FF20);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: #FFF;
+            font-size: 4rem;
+            color: #00BFFF;
             overflow: hidden;
+            position: relative;
+            border-bottom: 1px solid rgba(0, 191, 255, 0.2);
         }
 
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+        .project-tech-icons {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
         }
 
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
+        .tech-badge {
+            background: rgba(0, 191, 255, 0.2);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            border-radius: 15px;
+            padding: 4px 8px;
+            font-size: 0.7rem;
+            color: #00BFFF;
+            backdrop-filter: blur(10px);
         }
 
         .project-content {
@@ -744,6 +1000,36 @@
         }
 
         /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-avatar {
+                order: -1;
+            }
+
+            .avatar-container {
+                width: 250px;
+                height: 300px;
+            }
+
+            .avatar-svg {
+                width: 230px;
+                height: 280px;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -850,18 +1136,17 @@
         </div>
         
         <div class="hero-container">
-            <div class="hero-text" data-aos="fade-up" data-aos-delay="300">
+            <div class="hero-text" data-aos="fade-right" data-aos-delay="300">
                 <h1>Full-Stack Web Developer</h1>
                 <div class="hero-description">
                     <p>
-                        My name is <strong>Mate</strong> (that's my Georgian name 🇬🇪 — internationally I go by <strong>Matthew Anderson</strong>).<br/><br/>
-                        I'm a <strong>Full-Stack Web Developer</strong> — building both <strong>Frontend 🖥️</strong> and <strong>Backend 🛠️</strong> systems.<br/><br/>
-                        Very soon, I'll also be selling full <strong>Web Design services 🎨</strong> — from beautiful custom designs to fully functional websites!<br/><br/>
-                        I speak <strong>three languages 🌍</strong> which helps me work with people from all over the world.<br/><br/>
-                        All the photos you see on this website are <strong>real pictures of me</strong> — just animated or stylized to match the design, but always truly me! 📸✨<br/><br/>
-                        I'm constantly learning, building, and growing 🚀 — ready to bring your vision to life!<br/><br/>
-                        📢 To stay updated on my latest projects and offers, you can join my <strong>Telegram</strong>, <strong>WhatsApp</strong>, <strong>Discord</strong> and etc groups (links below).<br/><br/>
-                        📬 For work inquiries, just click on <strong>Hire Me</strong> Button and write your message to my email or You can Just write me directly to <strong>Instagram</strong>
+                        My name is <strong>Mate</strong> (that's my Georgian name 🇬🇪 — internationally I go by <strong>Matthew Anderson</strong>).<br><br>
+                        I'm a <strong>Full-Stack Web Developer</strong> — building both <strong>Frontend 🖥️</strong> and <strong>Backend 🛠️</strong> systems.<br><br>
+                        Very soon, I'll also be selling full <strong>Web Design services 🎨</strong> — from beautiful custom designs to fully functional websites!<br><br>
+                        I speak <strong>three languages 🌍</strong> which helps me work with people from all over the world.<br><br>
+                        I'm constantly learning, building, and growing 🚀 — ready to bring your vision to life!<br><br>
+                        📢 To stay updated on my latest projects and offers, you can join my social media groups.<br><br>
+                        📬 For work inquiries, just click on <strong>Hire Me</strong> Button or write me directly on <strong>Instagram</strong>
                     </p>
                 </div>
                 
@@ -881,6 +1166,21 @@
                     <a href="https://www.tiktok.com/@codecraftacademy1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
                     <a href="https://www.youtube.com/@CodeCraftAcademy-f3k" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
                     <a href="https://x.com/MatthewAnd78451" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+            
+            <!-- Avatar Section -->
+            <div class="hero-avatar" data-aos="fade-left" data-aos-delay="400">
+                <div class="avatar-container">
+                    <img src="icon.jpeg" alt="">
+                    <!-- Floating Tech Icons -->
+                    <div class="floating-icons">
+                        <div class="tech-icon" style="background: #E34F26;"><i class="fab fa-html5"></i></div>
+                        <div class="tech-icon" style="background: #1572B6;"><i class="fab fa-css3-alt"></i></div>
+                        <div class="tech-icon" style="background: #F7DF1E;"><i class="fab fa-js-square"></i></div>
+                        <div class="tech-icon" style="background: #3776AB;"><i class="fab fa-python"></i></div>
+                        <div class="tech-icon" style="background: #F05032;"><i class="fab fa-git-alt"></i></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -956,8 +1256,8 @@
                 <h3>Languages I Speak</h3>
                 <div class="language-list">
                     <div class="language-item">🇬🇪 Georgian (Native)</div>
-                    <div class="language-item">🇺🇸 English (Fluent)</div>
-                    <div class="language-item">🇮🇹 Italian (Conversational)</div>
+                    <div class="language-item">🇺🇸 English (Conversational)</div>
+                    <div class="language-item">🇷🇺 Russian (Fluent)</div>
                 </div>
             </div>
         </div>
@@ -1028,41 +1328,7 @@
             once: true
         });
 
-        // Project images mapping
-        const projectImages = {
-            // Frontend projects with real screenshots/images
-            'Calculator Website': 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop',
-            'Finance Tracker': 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=300&fit=crop',
-            'Password Generator': 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop',
-            'Quiz App': 'https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=300&fit=crop',
-            'Movie Search Website': 'https://images.unsplash.com/photo-1489599843821-47146f0daa32?w=400&h=300&fit=crop',
-            'Animations Library': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
-            'Weather Website': 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop',
-            'Landing Page': 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop',
-            '3D Project': 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=400&h=300&fit=crop',
-            'Snake Game': 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop',
-            
-            // Backend projects
-            'BlogAPI': 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop',
-            'Auth System': 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop',
-            'E-Wallet': 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop',
-            'Job Board': 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=300&fit=crop',
-            'Inventory Management System': 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop',
-            'URL Shortener': 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=400&h=300&fit=crop',
-            'Renting System': 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop',
-            'User Management System': 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop',
-            'Loan System': 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop',
-            'Polling System': 'https://images.unsplash.com/photo-1586776977607-310e9c725c37?w=400&h=300&fit=crop',
-            
-            // Full-stack projects
-            'InvoiceGenerator': 'https://images.unsplash.com/photo-1554224154-26032fced8bd?w=400&h=300&fit=crop',
-            'Student Grade Tracker': 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&h=300&fit=crop',
-            'Employee Management System': 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
-            'Content Brief Generator': 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=300&fit=crop',
-            'Recipes Book': 'https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400&h=300&fit=crop'
-        };
-
-        // Projects data
+        // Projects data with tech stacks
         const FrontEndProjects = [
             {
                 id: 1,
@@ -1071,7 +1337,8 @@
                 image: "🔢",
                 description: "A fully functional calculator built using HTML, CSS, and JavaScript. It supports basic arithmetic and a dedicated scientific section (sin, cos, tan, log, exponent, parentheses, and more) with a responsive design, intuitive interface, and smooth button interactions—making calculations simple and visually appealing for users.",
                 github: "https://github.com/mate882/Calculator",
-                live: "https://mate882.github.io/Calculator/"
+                live: "https://mate882.github.io/Calculator/",
+                tech: ["HTML", "CSS", "JS"]
             },
             {
                 id: 2,
@@ -1080,7 +1347,8 @@
                 image: "💰",
                 description: "A personal finance tracking application that allows users to log income and expenses, visualize spending patterns, and manage budgets. Built with modern JavaScript features and responsive design for an engaging user experience.",
                 github: "https://github.com/mate882/FinanceTracker",
-                live: "https://mate882.github.io/FinanceTracker/"
+                live: "https://mate882.github.io/FinanceTracker/",
+                tech: ["HTML", "CSS", "JS"]
             },
             {
                 id: 3,
@@ -1089,7 +1357,8 @@
                 image: "🔐",
                 description: "An interactive password generator tool that creates strong and secure passwords based on user-selected criteria. Features include customizable length, character types, and instant copy functionality, enhancing digital security for everyday users.",
                 github: "https://github.com/mate882/PasswordGenerator",
-                live: "https://mate882.github.io/PasswordGenerator/"
+                live: "https://mate882.github.io/PasswordGenerator/",
+                tech: ["HTML", "CSS", "JS"]
             },
             {
                 id: 4,
@@ -1098,7 +1367,8 @@
                 image: "❓",
                 description: "A dynamic quiz application designed to test knowledge across multiple categories. It features multiple-choice questions, real-time scoring, and responsive design, providing a fun and interactive experience for learners of all ages.",
                 github: "https://github.com/mate882/QuizApp",
-                live: "https://mate882.github.io/QuizApp/"
+                live: "https://mate882.github.io/QuizApp/",
+                tech: ["HTML", "CSS", "JS"]
             },
             {
                 id: 5,
@@ -1107,7 +1377,8 @@
                 image: "🎬",
                 description: "A movie search website that fetches real-time movie data from an API. Users can search for titles, view ratings, summaries, and images, all presented in a clean, responsive interface, perfect for movie enthusiasts.",
                 github: "https://github.com/mate882/MovieSearchApp",
-                live: "https://mate882.github.io/MovieSearchApp/"
+                live: "https://mate882.github.io/MovieSearchApp/",
+                tech: ["HTML", "CSS", "JS", "API"]
             },
             {
                 id: 6,
@@ -1116,7 +1387,8 @@
                 image: "✨",
                 description: "A library of reusable CSS and JavaScript animations for web projects. It includes fade, slide, bounce, and other visual effects, making it easy for developers to enhance UI and engage users without heavy frameworks.",
                 github: "https://github.com/mate882/AnimationsLibrary",
-                live: "https://mate882.github.io/AnimationsLibrary/"
+                live: "https://mate882.github.io/AnimationsLibrary/",
+                tech: ["HTML", "CSS", "JS"]
             },
             {
                 id: 7,
@@ -1125,7 +1397,8 @@
                 image: "🌤️",
                 description: "A weather application that provides real-time forecasts and temperature updates based on user location. Features include responsive design, dynamic icons, and easy navigation, offering users a practical and visually appealing weather tool.",
                 github: "https://github.com/mate882/WeatherApp",
-                live: "https://mate882.github.io/WeatherApp/"
+                live: "https://mate882.github.io/WeatherApp/",
+                tech: ["HTML", "CSS", "JS", "API"]
             },
             {
                 id: 8,
@@ -1134,7 +1407,8 @@
                 image: "📄",
                 description: "A professional landing page template with responsive design and clean layout. Includes interactive elements, smooth scrolling, and call-to-action sections, designed to effectively showcase products, services, or portfolios for any business.",
                 github: "https://github.com/mate882/LandingPage",
-                live: "https://mate882.github.io/LandingPage/"
+                live: "https://mate882.github.io/LandingPage/",
+                tech: ["HTML", "CSS", "JS"]
             },
             {
                 id: 9,
@@ -1143,7 +1417,8 @@
                 image: "🎲",
                 description: "A 3D web project showcasing interactive elements using modern web technologies. Includes animations and visual effects that provide depth and interactivity, creating an immersive experience for users exploring the 3D environment.",
                 github: "https://github.com/mate882/3D",
-                live: "https://mate882.github.io/3D/"
+                live: "https://mate882.github.io/3D/",
+                tech: ["HTML", "CSS", "JS", "3D"]
             },
             {
                 id: 10,
@@ -1152,7 +1427,8 @@
                 image: "🐍",
                 description: "A classic Snake game recreated with JavaScript, HTML, and CSS. Features smooth controls, increasing difficulty levels, and score tracking, providing a nostalgic yet interactive experience for users of all ages.",
                 github: "https://github.com/mate882/SnakeGame",
-                live: "https://mate882.github.io/SnakeGame/"
+                live: "https://mate882.github.io/SnakeGame/",
+                tech: ["HTML", "CSS", "JS"]
             }
         ];
 
@@ -1164,7 +1440,8 @@
                 image: "📝",
                 description: "A RESTful API for managing blog content including posts, likes and deleting. Built with robust backend logic, it allows CRUD operations, secure authentication, and smooth data handling for scalable blogging applications.",
                 github: "https://github.com/mate882/BlogAPI",
-                live: "https://blogapi-dvop.onrender.com"
+                live: "https://blogapi-dvop.onrender.com",
+                tech: ["Python", "Django", "API", "SQL"]
             },
             {
                 id: 12,
@@ -1173,7 +1450,8 @@
                 image: "🔑",
                 description: "A secure authentication system supporting registration, login. Built to handle user sessions safely, it ensures reliable access control and smooth integration for modern web applications.",
                 github: "https://github.com/mate882/AuthSystem",
-                live: "https://authsystem-93fq.onrender.com"
+                live: "https://authsystem-93fq.onrender.com",
+                tech: ["Python", "Django", "Auth", "SQL"]
             },
             {
                 id: 13,
@@ -1182,7 +1460,8 @@
                 image: "💳",
                 description: "An online wallet system allowing users to manage digital transactions securely. Supports adding funds, sending and receiving money, and tracking transaction history, built with a focus on security and reliable backend processing.",
                 github: "https://github.com/mate882/E-Wallet",
-                live: "https://e-wallet-ci3j.onrender.com"
+                live: "https://e-wallet-ci3j.onrender.com",
+                tech: ["Python", "Django", "SQL"]
             },
             {
                 id: 14,
@@ -1191,7 +1470,8 @@
                 image: "💼",
                 description: "A backend system for posting, searching, and applying to jobs. Includes CRUD functionality for jobs and applications, user authentication, and data validation, providing a solid foundation for employment-focused platforms.",
                 github: "https://github.com/mate882/JobBoard",
-                live: "https://jobboard-nen8.onrender.com"
+                live: "https://jobboard-nen8.onrender.com",
+                tech: ["Python", "Django", "API", "SQL"]
             },
             {
                 id: 15,
@@ -1200,7 +1480,8 @@
                 image: "📦",
                 description: "A system to track and manage inventory efficiently. Handles product listings, stock updates, and reporting features, designed to optimize warehouse operations and streamline business inventory workflows with a reliable backend.",
                 github: "https://github.com/mate882/InventoryManagementSystem",
-                live: "https://inventorymanagementsystem-nc1i.onrender.com"
+                live: "https://inventorymanagementsystem-nc1i.onrender.com",
+                tech: ["Python", "Django", "SQL"]
             },
             {
                 id: 16,
@@ -1209,7 +1490,8 @@
                 image: "🔗",
                 description: "A backend service that shortens long URLs and tracks click analytics. Provides fast redirection, secure storage, and easy API integration, ideal for developers and marketers needing efficient link management.",
                 github: "https://github.com/mate882/URLShortener",
-                live: "https://urlshortener-yzjx.onrender.com"
+                live: "https://urlshortener-yzjx.onrender.com",
+                tech: ["Python", "Django", "API"]
             },
             {
                 id: 17,
@@ -1218,7 +1500,8 @@
                 image: "🏠",
                 description: "A backend application for managing rentals of products or services. Supports bookings, inventory checks, and user authentication, providing a streamlined and secure system for rental operations and service management.",
                 github: "https://github.com/mate882/RentingSystem",
-                live: "https://rentingsystem-e51f.onrender.com"
+                live: "https://rentingsystem-e51f.onrender.com",
+                tech: ["Python", "Django", "SQL"]
             },
             {
                 id: 18,
@@ -1227,7 +1510,8 @@
                 image: "👥",
                 description: "A system for managing users, roles, and permissions. Includes registration, profile updates, and secure authentication features, allowing administrators to efficiently control access within applications while maintaining robust backend security.",
                 github: "https://github.com/mate882/UserManagementSystem",
-                live: "https://usermanagementsystem-uzy7.onrender.com"
+                live: "https://usermanagementsystem-uzy7.onrender.com",
+                tech: ["Python", "Django", "Auth", "SQL"]
             },
             {
                 id: 19,
@@ -1236,7 +1520,8 @@
                 image: "💴",
                 description: "A backend application for managing loan applications, approvals, and repayments. Features secure data handling, transaction tracking, and user management to provide a complete solution for financial loan systems.",
                 github: "https://github.com/mate882/LoanSystem",
-                live: "https://loansystem-veta.onrender.com"
+                live: "https://loansystem-veta.onrender.com",
+                tech: ["Python", "Django", "SQL"]
             },
             {
                 id: 20,
@@ -1245,7 +1530,8 @@
                 image: "🗳️",
                 description: "A backend for creating and managing polls with secure voting. Supports multiple poll types, user authentication, and result tracking, providing a reliable infrastructure for surveys and online voting applications.",
                 github: "https://github.com/mate882/PollingSystem",
-                live: "https://pollingsystem-2sb9.onrender.com"
+                live: "https://pollingsystem-2sb9.onrender.com",
+                tech: ["Python", "Django", "API", "SQL"]
             }
         ];
 
@@ -1257,7 +1543,8 @@
                 image: "🧾",
                 description: "A full-stack application for generating professional invoices. Users can create, edit, download and send invoices to clients by email from website, with backend database management ensuring data persistence and frontend interactivity providing a seamless user experience.",
                 github: "https://github.com/mate882/InvoiceGenerator",
-                live: "https://invoicegenerator-ay9l.onrender.com"
+                live: "https://invoicegenerator-ay9l.onrender.com",
+                tech: ["HTML", "CSS", "JS", "Python", "Django"]
             },
             {
                 id: 22,
@@ -1266,7 +1553,8 @@
                 image: "📊",
                 description: "An application for tracking student grades, courses, and performance. Combines a robust backend for data storage with an interactive frontend interface, enabling educators to manage academic records efficiently and intuitively.",
                 github: "https://github.com/mate882/StudentGradeTracker",
-                live: "https://studentgradetracker.onrender.com"
+                live: "https://studentgradetracker.onrender.com",
+                tech: ["HTML", "CSS", "JS", "Python", "Django"]
             },
             {
                 id: 23,
@@ -1275,7 +1563,8 @@
                 image: "👷",
                 description: "A complete system for managing employees, departments, and roles. Offers CRUD operations, secure authentication, and role-based access, integrating a backend database with a responsive frontend to streamline HR processes.",
                 github: "https://github.com/mate882/EmployeeManagementSystem",
-                live: "https://employeemanagementsystem-1yyr.onrender.com/"
+                live: "https://employeemanagementsystem-1yyr.onrender.com/",
+                tech: ["HTML", "CSS", "JS", "Python", "Django"]
             },
             {
                 id: 24,
@@ -1284,7 +1573,8 @@
                 image: "📋",
                 description: "A full-stack tool for generating content briefs automatically. Users input basic details, and the system creates structured briefs, combining backend processing with an intuitive frontend interface to enhance productivity for content creators.",
                 github: "https://github.com/mate882/ContentBriefGenerator",
-                live: "https://contentbriefgenerator.onrender.com"
+                live: "https://contentbriefgenerator.onrender.com",
+                tech: ["HTML", "CSS", "JS", "Python", "Django"]
             },
             {
                 id: 25,
@@ -1293,7 +1583,8 @@
                 image: "👨‍🍳",
                 description: "An application for creating, organizing, and sharing recipes. Features include user authentication, recipe CRUD operations, and a responsive frontend, providing a complete platform for culinary enthusiasts to manage and explore recipes.",
                 github: "https://github.com/mate882/RecipeBook",
-                live: "https://recipebook-jxxl.onrender.com"
+                live: "https://recipebook-jxxl.onrender.com",
+                tech: ["HTML", "CSS", "JS", "Python", "Django"]
             }
         ];
 
@@ -1318,16 +1609,15 @@
                 projectCard.setAttribute('data-aos', 'fade-up');
                 projectCard.setAttribute('data-aos-delay', (index % 6) * 100);
                 
-                // Check if project has a real image, otherwise use emoji
-                const hasImage = projectImages[project.title];
-                const imageContent = hasImage 
-                    ? `<img src="${projectImages[project.title]}" alt="${project.title}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">`
-                    : '';
+                // Create tech badges
+                const techBadges = project.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('');
                 
                 projectCard.innerHTML = `
                     <div class="project-image">
-                        ${imageContent}
-                        <div style="display: ${hasImage ? 'none' : 'flex'}; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 3rem;">${project.image}</div>
+                        <div style="font-size: 4rem;">${project.image}</div>
+                        <div class="project-tech-icons">
+                            ${techBadges}
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">${project.title}</h3>
@@ -1428,72 +1718,363 @@
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // Show delivery animation immediately
+                    // Show delivery animation
                     showDeliveryAnimation();
                     
-                    // Submit the form after a short delay
-                    setTimeout(() => {
-                        // Create a temporary form to submit the data
-                        const tempForm = document.createElement('form');
-                        tempForm.action = contactForm.action;
-                        tempForm.method = contactForm.method;
-                        tempForm.style.display = 'none';
-                        
-                        // Copy all form data
-                        const formData = new FormData(contactForm);
-                        for (let [key, value] of formData.entries()) {
-                            const input = document.createElement('input');
-                            input.type = 'hidden';
-                            input.name = key;
-                            input.value = value;
-                            tempForm.appendChild(input);
+                    // Create form data
+                    const formData = new FormData(this);
+                    
+                    // Submit form using fetch
+                    fetch(this.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
                         }
-                        
-                        document.body.appendChild(tempForm);
-                        tempForm.submit();
-                        
-                        // Reset the form
-                        contactForm.reset();
-                        
-                        // Navigate to home page after form submission
-                        setTimeout(() => {
-                            // Smooth scroll to home section
-                            const homeSection = document.getElementById('home');
-                            if (homeSection) {
-                                const headerHeight = document.querySelector('header').offsetHeight;
-                                const targetPosition = homeSection.offsetTop - headerHeight;
-                                
-                                window.scrollTo({
-                                    top: targetPosition,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }, 4000); // Navigate after the success message is shown
-                    }, 1000);
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Reset form on success
+                            this.reset();
+                        } else {
+                            console.error('Form submission failed');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
                 });
             }
+
+            // Header background change on scroll
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(13, 17, 23, 0.98)';
+                } else {
+                    header.style.background = 'rgba(13, 17, 23, 0.95)';
+                }
+            });
+
+            // Intersection Observer for skill bars animation
+            const skillBars = document.querySelectorAll('.skill-progress');
+            const skillObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fillBar 2s ease-out forwards';
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillBars.forEach(bar => {
+                skillObserver.observe(bar);
+            });
+
+            // Typing effect for hero description (optional enhancement)
+            function typeWriter(element, text, speed = 50) {
+                let i = 0;
+                element.innerHTML = '';
+                
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    }
+                }
+                type();
+            }
+
+            // Add loading state management
+            function showLoading() {
+                const projectsGrid = document.getElementById('projects-grid');
+                projectsGrid.innerHTML = '<div class="loading">Loading projects...</div>';
+            }
+
+            // Enhanced filter function with loading state
+            function filterProjectsWithLoading(filter) {
+                showLoading();
+                
+                setTimeout(() => {
+                    filterProjects(filter);
+                }, 300); // Small delay to show loading state
+            }
+
+            // Update filter button event listeners to use loading version
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    if (filter !== currentFilter) {
+                        filterProjectsWithLoading(filter);
+                    }
+                });
+            });
+
+            // Mobile menu toggle (if you want to add mobile navigation)
+            function createMobileMenu() {
+                const nav = document.querySelector('nav');
+                const navLinks = document.querySelector('.nav-links');
+                
+                // Create mobile menu button
+                const mobileMenuBtn = document.createElement('div');
+                mobileMenuBtn.className = 'mobile-menu-btn';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                mobileMenuBtn.style.display = 'none';
+                mobileMenuBtn.style.color = '#00BFFF';
+                mobileMenuBtn.style.fontSize = '1.5rem';
+                mobileMenuBtn.style.cursor = 'pointer';
+                
+                nav.appendChild(mobileMenuBtn);
+                
+                // Toggle mobile menu
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('mobile-active');
+                    const icon = this.querySelector('i');
+                    if (navLinks.classList.contains('mobile-active')) {
+                        icon.className = 'fas fa-times';
+                    } else {
+                        icon.className = 'fas fa-bars';
+                    }
+                });
+
+                // Show/hide mobile menu button based on screen size
+                function checkScreenSize() {
+                    if (window.innerWidth <= 768) {
+                        mobileMenuBtn.style.display = 'block';
+                        navLinks.style.display = navLinks.classList.contains('mobile-active') ? 'flex' : 'none';
+                    } else {
+                        mobileMenuBtn.style.display = 'none';
+                        navLinks.style.display = 'flex';
+                        navLinks.classList.remove('mobile-active');
+                    }
+                }
+
+                window.addEventListener('resize', checkScreenSize);
+                checkScreenSize();
+            }
+
+            // Initialize mobile menu
+            createMobileMenu();
+
+            // Add smooth reveal animations for sections
+            const sections = document.querySelectorAll('section');
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Add particle effect to hero section (optional enhancement)
+            function createParticles() {
+                const heroSection = document.getElementById('home');
+                const particleContainer = document.createElement('div');
+                particleContainer.className = 'particles';
+                particleContainer.style.position = 'absolute';
+                particleContainer.style.top = '0';
+                particleContainer.style.left = '0';
+                particleContainer.style.width = '100%';
+                particleContainer.style.height = '100%';
+                particleContainer.style.pointerEvents = 'none';
+                particleContainer.style.zIndex = '1';
+
+                heroSection.appendChild(particleContainer);
+
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'absolute';
+                    particle.style.width = '2px';
+                    particle.style.height = '2px';
+                    particle.style.background = 'rgba(0, 191, 255, 0.5)';
+                    particle.style.borderRadius = '50%';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+                    particle.style.animation = `float ${3 + Math.random() * 4}s ease-in-out infinite`;
+                    particle.style.animationDelay = Math.random() * 2 + 's';
+
+                    particleContainer.appendChild(particle);
+                }
+            }
+
+            // Initialize particles
+            createParticles();
+
+            // Add copy to clipboard functionality for contact info
+            function addCopyToClipboard() {
+                const emailLink = document.querySelector('a[href^="mailto:"]');
+                if (emailLink) {
+                    emailLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const email = this.textContent;
+                        navigator.clipboard.writeText(email).then(() => {
+                            // Show temporary notification
+                            const notification = document.createElement('div');
+                            notification.textContent = 'Email copied to clipboard!';
+                            notification.style.position = 'fixed';
+                            notification.style.top = '20px';
+                            notification.style.right = '20px';
+                            notification.style.background = '#00BFFF';
+                            notification.style.color = 'white';
+                            notification.style.padding = '10px 20px';
+                            notification.style.borderRadius = '5px';
+                            notification.style.zIndex = '10001';
+                            notification.style.fontSize = '14px';
+                            document.body.appendChild(notification);
+
+                            setTimeout(() => {
+                                document.body.removeChild(notification);
+                            }, 3000);
+                        });
+                    });
+                }
+            }
+
+            // Initialize copy to clipboard
+            addCopyToClipboard();
+
+            // Add project search functionality (optional enhancement)
+            function addProjectSearch() {
+                const projectsSection = document.getElementById('projects');
+                const filtersContainer = document.querySelector('.project-filters');
+                
+                const searchInput = document.createElement('input');
+                searchInput.type = 'text';
+                searchInput.placeholder = 'Search projects...';
+                searchInput.className = 'project-search';
+                searchInput.style.padding = '0.8rem 1.5rem';
+                searchInput.style.margin = '1rem 0';
+                searchInput.style.border = '2px solid #00BFFF';
+                searchInput.style.borderRadius = '25px';
+                searchInput.style.background = '#0D1117';
+                searchInput.style.color = '#F5F5F5';
+                searchInput.style.fontSize = '0.9rem';
+                searchInput.style.maxWidth = '300px';
+                searchInput.style.width = '100%';
+
+                filtersContainer.parentNode.insertBefore(searchInput, filtersContainer.nextSibling);
+
+                searchInput.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    let projectsToShow = allProjects;
+
+                    // Apply current filter
+                    if (currentFilter === 'frontend') {
+                        projectsToShow = FrontEndProjects;
+                    } else if (currentFilter === 'backend') {
+                        projectsToShow = BackEndProjects;
+                    } else if (currentFilter === 'fullstack') {
+                        projectsToShow = FullStackProjects;
+                    }
+
+                    // Apply search filter
+                    if (searchTerm) {
+                        projectsToShow = projectsToShow.filter(project =>
+                            project.title.toLowerCase().includes(searchTerm) ||
+                            project.description.toLowerCase().includes(searchTerm) ||
+                            project.tech.some(tech => tech.toLowerCase().includes(searchTerm))
+                        );
+                    }
+
+                    renderProjects(projectsToShow);
+                });
+            }
+
+            // Initialize project search
+            addProjectSearch();
+
+            console.log('✅ Matthew Anderson Portfolio - Fully Loaded');
+            console.log('🚀 All features initialized successfully!');
         });
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(13, 17, 23, 0.98)';
-                header.style.boxShadow = '0 4px 20px rgba(0, 191, 255, 0.15)';
-            } else {
-                header.style.background = 'rgba(13, 17, 23, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 191, 255, 0.1)';
+        // Add CSS for mobile menu and other enhancements
+        const additionalCSS = `
+            .mobile-menu-btn {
+                display: none;
             }
-        });
 
-        // Error handling for projects loading
-        window.addEventListener('error', function(e) {
-            console.error('Error loading content:', e);
-            const projectsGrid = document.getElementById('projects-grid');
-            if (projectsGrid && projectsGrid.innerHTML.includes('Loading')) {
-                projectsGrid.innerHTML = '<div class="loading">Error loading projects. Please refresh the page.</div>';
+            .nav-links.mobile-active {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(13, 17, 23, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                z-index: 999;
             }
-        });
+
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .project-search {
+                display: block;
+                margin: 1rem auto 2rem auto;
+            }
+
+            .project-search:focus {
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.3);
+            }
+
+            @media (max-width: 768px) {
+                .project-search {
+                    margin: 1rem auto;
+                    max-width: 280px;
+                }
+            }
+
+            /* Additional hover effects */
+            .social-links a {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .social-links a::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                background: rgba(0, 191, 255, 0.2);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                transition: all 0.3s ease;
+            }
+
+            .social-links a:hover::before {
+                width: 100%;
+                height: 100%;
+            }
+
+            /* Improved loading state */
+            .loading {
+                background: linear-gradient(90deg, #00BFFF 25%, transparent 50%, #00BFFF 75%);
+                background-size: 200% 100%;
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                animation: loading-shimmer 2s infinite;
+            }
+
+            @keyframes loading-shimmer {
+                0% { background-position: -200% 0; }
+                100% { background-position: 200% 0; }
+            }
+        `;
+
+        // Add additional CSS to head
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = additionalCSS;
+        document.head.appendChild(styleSheet);
     </script>
 </body>
 </html>
