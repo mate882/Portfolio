@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f6f2" />
+    <meta name="description" content="Portfolio of Mate Asanidze, a developer building responsive websites, GSAP experiences, and custom AI chatbots." />
+    <meta property="og:title" content="Mate Asanidze — Frontend Developer & AI Chatbot Developer" />
+    <meta property="og:description" content="Responsive websites, interactive GSAP experiences, and custom AI chatbots." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/og-cover.svg" />
+    <title>Mate Asanidze — Frontend Developer & AI Chatbot Developer</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="js/projects.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="home">
+      <nav class="nav container" aria-label="Primary navigation">
+        <a class="brand" href="#home" aria-label="Mate Asanidze home">Mate Asanidze<span>.</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Open navigation menu</span><i></i><i></i>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#about">About</a><a href="#projects">Projects</a>
+          <a href="#skills">Skills</a><a href="#services">Services</a><a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero container" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow hero-animate">Frontend developer · AI chatbots</p>
+          <h1 id="hero-title" class="hero-animate">Frontend Developer building modern web experiences and AI chatbots.</h1>
+          <p class="hero-summary hero-animate">I build responsive websites, interactive GSAP experiences, and custom AI chatbots integrated directly into websites.</p>
+          <div class="hero-actions hero-animate">
+            <a class="button button-dark" href="#projects">View My Work <span aria-hidden="true">↗</span></a>
+            <a class="button button-light" href="#contact">Contact Me</a>
+          </div>
+          <div class="social-row hero-animate" aria-label="Social profiles">
+            <a data-social="github" href="https://github.com/mate882" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+            <a data-social="linkedin" href="https://www.linkedin.com/in/mate-asanidze-22ba36391/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+            <a data-social="x" href="https://x.com/MateAsanidze" target="_blank" rel="noreferrer">X <span>↗</span></a>
+          </div>
+        </div>
+        <div class="hero-visual hero-animate" aria-label="A website connected to a frontend, AI chatbot, and visitor" role="img">
+          <div class="visual-window"><div class="window-bar"><b></b><b></b><b></b><span>your-site.dev</span></div><div class="window-content"><span class="skeleton wide"></span><span class="skeleton"></span><span class="skeleton short"></span><div class="mini-card"><small>Need a hand?</small><strong>Ask the website</strong><i>✦</i></div></div></div>
+          <div class="signal signal-one"></div><div class="signal signal-two"></div><div class="signal signal-three"></div>
+          <div class="flow-tag tag-website">Website</div><div class="flow-tag tag-frontend">Frontend</div><div class="flow-tag tag-chatbot">AI Chatbot</div><div class="flow-tag tag-visitor">Visitor</div>
+        </div>
+      </section>
+
+      <section class="intro-band" aria-label="Portfolio introduction"><div class="container"><p>Modern interfaces, purposeful motion, and conversational website experiences.</p><span>Available for frontend projects</span></div></section>
+
+      <section class="section container" id="about" aria-labelledby="about-title">
+        <div class="section-heading reveal"><p class="eyebrow">01 / About</p><h2 id="about-title">About Me</h2></div>
+        <div class="about-grid reveal"><div><p class="lead">I’m a developer focused on building modern web experiences that combine responsive frontend development, interactive design, GSAP animation, and AI chatbots.</p></div><div class="body-copy"><p>My current professional focus is frontend development. I build responsive websites using HTML, CSS, and JavaScript, with an emphasis on polished interfaces, smooth interactions, and strong user experience.</p><p>I also build custom AI chatbots and integrate them into websites, allowing visitors to interact with a business, product, service, or website content through a conversational interface.</p><p>Alongside my professional work, I’m expanding my software engineering and AI knowledge through hands-on projects and independent study. I prefer learning by building: implementing concepts, testing them, debugging problems, and improving the result.</p></div></div>
+      </section>
+
+      <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="container"><div class="section-heading reveal"><p class="eyebrow">02 / Work</p><h2 id="projects-title">Selected Projects</h2><p class="section-description">A selection of projects I’ve built across frontend development, interactive experiences, and AI chatbot integration.</p></div><div class="filter-bar reveal" role="group" aria-label="Filter projects"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="frontend">Frontend</button><button class="filter" data-filter="chatbot">AI Chatbots</button><button class="filter" data-filter="gsap">GSAP</button></div><div class="project-grid" id="project-grid" aria-live="polite"></div></div>
+      </section>
+
+      <section class="section container" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading reveal"><p class="eyebrow">03 / Capabilities</p><h2 id="skills-title">Technical Skills</h2></div>
+        <div class="skills-grid">
+          <article class="skill-group reveal"><p class="skill-number">01</p><h3>Frontend Development</h3><ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Responsive Web Design</li><li>GSAP</li><li>Tailwind CSS</li><li>Bootstrap</li></ul></article>
+          <article class="skill-group reveal"><p class="skill-number">02</p><h3>AI Chatbot Development</h3><ul><li>AI Chatbot Development</li><li>AI Chatbot Integration</li><li>AI API Integration</li><li>Website Chatbots</li></ul></article>
+          <article class="skill-group reveal"><p class="skill-number">03</p><h3>Programming &amp; Tools</h3><ul><li>Python <em>learning</em></li><li>Git</li><li>GitHub</li></ul></article>
+          <article class="skill-group learning reveal"><p class="skill-number">04</p><p class="learning-label">Currently learning</p><h3>Deeper Foundations</h3><ul><li>Artificial Intelligence</li><li>Machine Learning</li><li>Neural Networks</li><li>NumPy</li><li>Mathematics for AI</li><li>Data Structures</li><li>Algorithms</li></ul></article>
+        </div>
+      </section>
+
+      <section class="explore-section" aria-labelledby="explore-title"><div class="container explore-inner reveal"><div><p class="eyebrow">04 / Learning</p><h2 id="explore-title">Currently Exploring</h2></div><div class="explore-tags"><span>Python <i>Learning</i></span><span>Artificial Intelligence <i>Exploring</i></span><span>Machine Learning <i>Learning</i></span><span>Neural Networks <i>Developing</i></span><span>NumPy <i>Learning</i></span><span>Mathematics for AI <i>Exploring</i></span><span>Data Structures <i>Learning</i></span><span>Algorithms <i>Learning</i></span></div></div></section>
+
+      <section class="section container" id="services" aria-labelledby="services-title"><div class="section-heading reveal"><p class="eyebrow">05 / Services</p><h2 id="services-title">What I Can Build</h2></div><div class="service-grid"><article class="service-card reveal"><span>01</span><h3>Responsive Websites</h3><p>Modern responsive websites designed to provide a polished experience across desktop, tablet, and mobile.</p></article><article class="service-card reveal"><span>02</span><h3>GSAP Web Experiences</h3><p>Interactive websites and visual experiences with smooth, purposeful animations and transitions using GSAP.</p></article><article class="service-card service-card-wide reveal"><span>03</span><h3>AI Chatbots &amp; Integration</h3><p>I build custom AI chatbots and integrate them directly into websites for interactive visitor experiences.</p></article></div></section>
+
+      <section class="section work-section" aria-labelledby="work-title"><div class="container"><div class="section-heading reveal"><p class="eyebrow">06 / Process</p><h2 id="work-title">How I Work</h2></div><ol class="work-list"><li class="reveal"><span>01</span><div><h3>Understand</h3><p>I first understand the product, audience, and requirements.</p></div></li><li class="reveal"><span>02</span><div><h3>Build</h3><p>I turn the requirements into a responsive and interactive experience.</p></div></li><li class="reveal"><span>03</span><div><h3>Refine</h3><p>I test, debug, optimize, and improve the details.</p></div></li><li class="reveal"><span>04</span><div><h3>Deliver</h3><p>I provide clean, maintainable work and clear communication.</p></div></li></ol></div></section>
+
+      <section class="section container" aria-labelledby="beyond-title"><div class="beyond-card reveal"><p class="eyebrow">In progress</p><h2 id="beyond-title">Beyond Frontend</h2><p>Alongside my frontend work, I’m expanding my knowledge of Python, artificial intelligence, machine learning, mathematics, data structures, and algorithms through hands-on projects.</p><p>One current project is a neural network implemented from scratch in Python. It is still under development and will be added to my portfolio once it reaches a finished and demonstrable state.</p><span class="progress-note"><i></i> Currently developing</span></div></section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container contact-inner reveal"><p class="eyebrow">07 / Contact</p><h2 id="contact-title">Let’s Build Something</h2><p>Have a project in mind or looking for a developer? Get in touch.</p><a class="button button-dark contact-button" data-email href="mailto:mateasanidze808@gmail.com">Start a Conversation <span aria-hidden="true">↗</span></a><div class="contact-links"><a data-email href="mailto:mateasanidze808@gmail.com">Email</a><a data-social="linkedin" href="https://www.linkedin.com/in/mate-asanidze-22ba36391/" target="_blank" rel="noreferrer">LinkedIn</a><a data-social="github" href="https://github.com/mate882" target="_blank" rel="noreferrer">GitHub</a><a data-social="x" href="https://x.com/MateAsanidze" target="_blank" rel="noreferrer">X</a></div></div></section>
+    </main>
+
+    <footer class="footer"><div class="container"><a class="brand" href="#home">Mate Asanidze<span>.</span></a><p>Frontend Developer <b>•</b> AI Chatbots <b>•</b> Software Engineering</p><p>© <span id="year"></span> Mate Asanidze</p></div></footer>
+    <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-backdrop" data-close-modal></div><article class="modal-panel"><button class="modal-close" type="button" data-close-modal aria-label="Close project details">×</button><div id="modal-content"></div></article></div>
+  </body>
+</html>
