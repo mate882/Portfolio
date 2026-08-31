@@ -24,7 +24,8 @@ const projects = [
       features: 'Visitors can browse the website and open the chatbot to begin a conversation in context.',
       challenges: 'Maintaining a clear, usable experience across screen sizes while introducing a conversational interface.',
       solution: 'A responsive layout with the chatbot integrated as part of the website experience.',
-      learned: 'Designing conversational interactions within a responsive website.'
+      learned: 'Designing conversational interactions within a responsive website.',
+      note: 'Answers may take a while to load.'
     }
   },
   {
@@ -38,7 +39,8 @@ const projects = [
       features: 'The interface lets visitors explore the website and engage with its chatbot conversation flow.',
       challenges: 'Bringing visual clarity and interaction together in a responsive interface.',
       solution: 'A focused frontend structure with the chatbot integrated into the visitor journey.',
-      learned: 'Creating a cohesive experience between website content and conversational interaction.'
+      learned: 'Creating a cohesive experience between website content and conversational interaction.',
+      note: 'Answers may take a while to load.'
     }
   },
   {
