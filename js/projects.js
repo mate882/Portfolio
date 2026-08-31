@@ -64,7 +64,8 @@ const projects = [
       overview: 'A previous Django project organized around user accounts and wallet management.',
       built: 'A Django project with separate user and wallet applications.',
       features: 'Registration, login, profile, password-reset, wallet creation, deposits, withdrawals, transfers, and transaction history.',
-      learned: 'Structuring user flows and related backend operations in a Django application.'
+      learned: 'Structuring user flows and related backend operations in a Django application.',
+      note: 'Sensitive configuration such as email credentials is stored using environment variables and is intentionally excluded from the repository.'
     }
   },
   {
@@ -76,7 +77,8 @@ const projects = [
       overview: 'A previous Django project for organizing job-related information and applications.',
       built: 'A Django application with job, company, applicant, and application areas.',
       features: 'Job lists and detail pages, company lists and forms, applicant profiles and applications, plus login and registration pages.',
-      learned: 'Modeling related application data and building the accompanying Django views and templates.'
+      learned: 'Modeling related application data and building the accompanying Django views and templates.',
+      note: 'You may need to install some dependencies after cloning the repository.'
     }
   },
   {
@@ -88,7 +90,7 @@ const projects = [
       overview: 'A previous Django project for organizing inventory-related data and operations.',
       built: 'A Django inventory application with dedicated inventory models, forms, views, and templates.',
       features: 'Dashboard, category management, item detail and forms, stock movement records, and supplier management.',
-      learned: 'Building database-driven Django views for connected inventory records.'
+      learned: 'Building database-driven Django views for connected inventory records.',
     }
   },
   {
