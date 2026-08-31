@@ -25,7 +25,7 @@ const projects = [
       challenges: 'Maintaining a clear, usable experience across screen sizes while introducing a conversational interface.',
       solution: 'A responsive layout with the chatbot integrated as part of the website experience.',
       learned: 'Designing conversational interactions within a responsive website.',
-      note: 'Answers may take a while to load.'
+      note: 'We are using Gemini API Key so answers may take a while to load.'
     }
   },
   {
